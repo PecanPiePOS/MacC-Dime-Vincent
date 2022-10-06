@@ -9,21 +9,53 @@
 /* Begin PBXBuildFile section */
 		CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */; };
 		CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */; };
-		CBADEE3228EEBCE00010B5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE3128EEBCE00010B5AA /* ViewController.swift */; };
-		CBADEE3528EEBCE00010B5AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBADEE3328EEBCE00010B5AA /* Main.storyboard */; };
+		CBADEE3228EEBCE00010B5AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE3128EEBCE00010B5AA /* MainViewController.swift */; };
 		CBADEE3728EEBCE00010B5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBADEE3628EEBCE00010B5AA /* Assets.xcassets */; };
 		CBADEE3A28EEBCE00010B5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBADEE3828EEBCE00010B5AA /* LaunchScreen.storyboard */; };
+		CBADEE4E28EEBF060010B5AA /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE4D28EEBF060010B5AA /* TabbarViewController.swift */; };
+		CBADEE5028EEBF620010B5AA /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE4F28EEBF620010B5AA /* Logger.swift */; };
+		CBADEE5328EEBF950010B5AA /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE5228EEBF950010B5AA /* ImageLiteral.swift */; };
+		CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE5428EEBFBB0010B5AA /* BaseViewController.swift */; };
+		CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE5828EEC05A0010B5AA /* BackButton.swift */; };
+		CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE5A28EEC1CA0010B5AA /* UIViewController+Extension.swift */; };
+		CBADEE5D28EEC2090010B5AA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE5C28EEC2090010B5AA /* UIColor+Extension.swift */; };
+		CBADEE5F28EEC2490010B5AA /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE5E28EEC2490010B5AA /* UICollectionView+Extension.swift */; };
+		CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6028EEC25F0010B5AA /* NSObject+Extension.swift */; };
+		CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6228EEC26E0010B5AA /* UIView+Extension.swift */; };
+		CBADEE6528EEC28A0010B5AA /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6428EEC28A0010B5AA /* UILabel+Extension.swift */; };
+		CBADEE6728EEC2E00010B5AA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6628EEC2E00010B5AA /* Notification+Extension.swift */; };
+		CBADEE6928EEC3510010B5AA /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6828EEC3510010B5AA /* UITableView+Extension.swift */; };
+		CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6A28EEC39B0010B5AA /* BaseCollectionViewCell.swift */; };
+		CBADEE6D28EEC3AB0010B5AA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE6C28EEC3AB0010B5AA /* BaseTableViewCell.swift */; };
+		CBADEE7028EEC65B0010B5AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CBADEE6F28EEC65B0010B5AA /* SnapKit */; };
+		CBADEE7328EEC6720010B5AA /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CBADEE7228EEC6720010B5AA /* Then */; };
+		CBADEE7628EEC9B80010B5AA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE7528EEC9B80010B5AA /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CBADEE2A28EEBCE00010B5AA /* Vincent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vincent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBADEE3128EEBCE00010B5AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CBADEE3428EEBCE00010B5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CBADEE3128EEBCE00010B5AA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CBADEE3628EEBCE00010B5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBADEE3928EEBCE00010B5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBADEE3B28EEBCE00010B5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBADEE4D28EEBF060010B5AA /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		CBADEE4F28EEBF620010B5AA /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		CBADEE5228EEBF950010B5AA /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
+		CBADEE5428EEBFBB0010B5AA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CBADEE5828EEC05A0010B5AA /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		CBADEE5A28EEC1CA0010B5AA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE5C28EEC2090010B5AA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE5E28EEC2490010B5AA /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE6028EEC25F0010B5AA /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE6228EEC26E0010B5AA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE6428EEC28A0010B5AA /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE6628EEC2E00010B5AA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE6828EEC3510010B5AA /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		CBADEE6A28EEC39B0010B5AA /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBADEE6C28EEC3AB0010B5AA /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		CBADEE7528EEC9B80010B5AA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBADEE7028EEC65B0010B5AA /* SnapKit in Frameworks */,
+				CBADEE7328EEC6720010B5AA /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +90,134 @@
 		CBADEE2C28EEBCE00010B5AA /* Vincent */ = {
 			isa = PBXGroup;
 			children = (
-				CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */,
-				CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */,
-				CBADEE3128EEBCE00010B5AA /* ViewController.swift */,
-				CBADEE3328EEBCE00010B5AA /* Main.storyboard */,
-				CBADEE3628EEBCE00010B5AA /* Assets.xcassets */,
-				CBADEE3828EEBCE00010B5AA /* LaunchScreen.storyboard */,
-				CBADEE3B28EEBCE00010B5AA /* Info.plist */,
+				CBADEE4228EEBD410010B5AA /* Global */,
+				CBADEE4128EEBD3A0010B5AA /* Screens */,
 			);
 			path = Vincent;
+			sourceTree = "<group>";
+		};
+		CBADEE4128EEBD3A0010B5AA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE4A28EEBED10010B5AA /* Tapbar */,
+				CBADEE4B28EEBEDE0010B5AA /* Main */,
+				CBADEE7428EEC9850010B5AA /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CBADEE4228EEBD410010B5AA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE5128EEBF880010B5AA /* Literal */,
+				CBADEE4428EEBD5C0010B5AA /* Base */,
+				CBADEE4528EEBD620010B5AA /* Protocol */,
+				CBADEE4328EEBD520010B5AA /* Utils */,
+				CBADEE4728EEBD750010B5AA /* Extensions */,
+				CBADEE4928EEBD830010B5AA /* Resource */,
+				CBADEE4828EEBD7D0010B5AA /* UIComponent */,
+				CBADEE4628EEBD6C0010B5AA /* Supports */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		CBADEE4328EEBD520010B5AA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE4F28EEBF620010B5AA /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CBADEE4428EEBD5C0010B5AA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE5428EEBFBB0010B5AA /* BaseViewController.swift */,
+				CBADEE6A28EEC39B0010B5AA /* BaseCollectionViewCell.swift */,
+				CBADEE6C28EEC3AB0010B5AA /* BaseTableViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CBADEE4528EEBD620010B5AA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CBADEE4628EEBD6C0010B5AA /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */,
+				CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */,
+				CBADEE3B28EEBCE00010B5AA /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		CBADEE4728EEBD750010B5AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE5C28EEC2090010B5AA /* UIColor+Extension.swift */,
+				CBADEE5A28EEC1CA0010B5AA /* UIViewController+Extension.swift */,
+				CBADEE6828EEC3510010B5AA /* UITableView+Extension.swift */,
+				CBADEE5E28EEC2490010B5AA /* UICollectionView+Extension.swift */,
+				CBADEE6028EEC25F0010B5AA /* NSObject+Extension.swift */,
+				CBADEE6228EEC26E0010B5AA /* UIView+Extension.swift */,
+				CBADEE6428EEC28A0010B5AA /* UILabel+Extension.swift */,
+				CBADEE6628EEC2E00010B5AA /* Notification+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CBADEE4828EEBD7D0010B5AA /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE5828EEC05A0010B5AA /* BackButton.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		CBADEE4928EEBD830010B5AA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE3828EEBCE00010B5AA /* LaunchScreen.storyboard */,
+				CBADEE3628EEBCE00010B5AA /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CBADEE4A28EEBED10010B5AA /* Tapbar */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE4D28EEBF060010B5AA /* TabbarViewController.swift */,
+			);
+			path = Tapbar;
+			sourceTree = "<group>";
+		};
+		CBADEE4B28EEBEDE0010B5AA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE3128EEBCE00010B5AA /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CBADEE5128EEBF880010B5AA /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE5228EEBF950010B5AA /* ImageLiteral.swift */,
+			);
+			path = Literal;
+			sourceTree = "<group>";
+		};
+		CBADEE7428EEC9850010B5AA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CBADEE7528EEC9B80010B5AA /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +236,10 @@
 			dependencies = (
 			);
 			name = Vincent;
+			packageProductDependencies = (
+				CBADEE6F28EEC65B0010B5AA /* SnapKit */,
+				CBADEE7228EEC6720010B5AA /* Then */,
+			);
 			productName = Vincent;
 			productReference = CBADEE2A28EEBCE00010B5AA /* Vincent.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +268,10 @@
 				Base,
 			);
 			mainGroup = CBADEE2128EEBCE00010B5AA;
+			packageReferences = (
+				CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CBADEE7128EEC6720010B5AA /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = CBADEE2B28EEBCE00010B5AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +288,6 @@
 			files = (
 				CBADEE3A28EEBCE00010B5AA /* LaunchScreen.storyboard in Resources */,
 				CBADEE3728EEBCE00010B5AA /* Assets.xcassets in Resources */,
-				CBADEE3528EEBCE00010B5AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +298,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBADEE3228EEBCE00010B5AA /* ViewController.swift in Sources */,
+				CBADEE5F28EEC2490010B5AA /* UICollectionView+Extension.swift in Sources */,
+				CBADEE6528EEC28A0010B5AA /* UILabel+Extension.swift in Sources */,
+				CBADEE6D28EEC3AB0010B5AA /* BaseTableViewCell.swift in Sources */,
+				CBADEE5028EEBF620010B5AA /* Logger.swift in Sources */,
+				CBADEE7628EEC9B80010B5AA /* SearchViewController.swift in Sources */,
+				CBADEE5328EEBF950010B5AA /* ImageLiteral.swift in Sources */,
+				CBADEE5D28EEC2090010B5AA /* UIColor+Extension.swift in Sources */,
+				CBADEE6928EEC3510010B5AA /* UITableView+Extension.swift in Sources */,
+				CBADEE6728EEC2E00010B5AA /* Notification+Extension.swift in Sources */,
+				CBADEE3228EEBCE00010B5AA /* MainViewController.swift in Sources */,
+				CBADEE4E28EEBF060010B5AA /* TabbarViewController.swift in Sources */,
+				CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */,
+				CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */,
+				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
+				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
+				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
+				CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */,
 				CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +323,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CBADEE3328EEBCE00010B5AA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBADEE3428EEBCE00010B5AA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CBADEE3828EEBCE00010B5AA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +457,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Y8YH8GWMM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vincent/Info.plist;
+				INFOPLIST_FILE = Vincent/Global/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -302,9 +469,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dime.Vincent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,10 +487,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Y8YH8GWMM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vincent/Info.plist;
+				INFOPLIST_FILE = Vincent/Global/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,9 +499,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dime.Vincent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +530,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CBADEE7128EEC6720010B5AA /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBADEE6F28EEC65B0010B5AA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CBADEE7228EEC6720010B5AA /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBADEE7128EEC6720010B5AA /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBADEE2228EEBCE00010B5AA /* Project object */;
 }
