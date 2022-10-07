@@ -5,4 +5,4 @@
 - PR에 대한 추가 설명이나 작업하면서 고민이 되었던 부분 등
 
 ## Close Issues
-- Pull Request와 관련된 Issue가 있다면 나열합니다..
+- Pull Request와 관련된 Issue가 있다면 나열합니다.
