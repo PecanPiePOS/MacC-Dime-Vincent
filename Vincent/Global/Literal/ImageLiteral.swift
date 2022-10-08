@@ -12,7 +12,8 @@ enum ImageLiteral {
     // MARK: - button
     
     static var btnHome: UIImage { .load(systemName: "house") }
-    static var btnSearch: UIImage { .load(systemName: "magnifyingglass") }
+    static var btnEnroll: UIImage { .load(systemName: "plus.circle.fill") }
+    static var btnProfile: UIImage { .load(systemName: "person.crop.circle") }
     static var btnBack: UIImage { .load(systemName: "chevron.backward") }
     
 }

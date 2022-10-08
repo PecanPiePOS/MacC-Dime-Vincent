@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB81DA5428F1B108005164FA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CB81DA5328F1B108005164FA /* Lottie */; };
+		CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5628F1B15D005164FA /* MessageViewController.swift */; };
+		CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5928F1B19E005164FA /* SellViewController.swift */; };
 		CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */; };
 		CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */; };
 		CBADEE3228EEBCE00010B5AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE3128EEBCE00010B5AA /* MainViewController.swift */; };
@@ -33,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB81DA5628F1B15D005164FA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		CB81DA5928F1B19E005164FA /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		CBADEE2A28EEBCE00010B5AA /* Vincent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vincent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,12 +70,29 @@
 			files = (
 				CBADEE7028EEC65B0010B5AA /* SnapKit in Frameworks */,
 				CBADEE7328EEC6720010B5AA /* Then in Frameworks */,
+				CB81DA5428F1B108005164FA /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB81DA5528F1B143005164FA /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				CB81DA5628F1B15D005164FA /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		CB81DA5828F1B17E005164FA /* Sell */ = {
+			isa = PBXGroup;
+			children = (
+				CB81DA5928F1B19E005164FA /* SellViewController.swift */,
+			);
+			path = Sell;
+			sourceTree = "<group>";
+		};
 		CBADEE2128EEBCE00010B5AA = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				CBADEE4A28EEBED10010B5AA /* Tapbar */,
+				CB81DA5828F1B17E005164FA /* Sell */,
+				CB81DA5528F1B143005164FA /* Message */,
 				CBADEE4B28EEBEDE0010B5AA /* Main */,
 				CBADEE7428EEC9850010B5AA /* Search */,
 			);
@@ -239,6 +263,7 @@
 			packageProductDependencies = (
 				CBADEE6F28EEC65B0010B5AA /* SnapKit */,
 				CBADEE7228EEC6720010B5AA /* Then */,
+				CB81DA5328F1B108005164FA /* Lottie */,
 			);
 			productName = Vincent;
 			productReference = CBADEE2A28EEBCE00010B5AA /* Vincent.app */;
@@ -271,6 +296,7 @@
 			packageReferences = (
 				CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CBADEE7128EEC6720010B5AA /* XCRemoteSwiftPackageReference "Then" */,
+				CB81DA5228F1B108005164FA /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = CBADEE2B28EEBCE00010B5AA /* Products */;
 			projectDirPath = "";
@@ -312,6 +338,8 @@
 				CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */,
 				CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */,
 				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
+				CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */,
+				CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */,
 				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
 				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
@@ -532,6 +560,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CB81DA5228F1B108005164FA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -551,6 +587,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CB81DA5328F1B108005164FA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB81DA5228F1B108005164FA /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		CBADEE6F28EEC65B0010B5AA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */;
