@@ -33,6 +33,14 @@
 		CBADEE7028EEC65B0010B5AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CBADEE6F28EEC65B0010B5AA /* SnapKit */; };
 		CBADEE7328EEC6720010B5AA /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CBADEE7228EEC6720010B5AA /* Then */; };
 		CBADEE7628EEC9B80010B5AA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADEE7528EEC9B80010B5AA /* SearchViewController.swift */; };
+		CBCBEF7D28F2E39B009F134F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF7C28F2E39B009F134F /* Channel.swift */; };
+		CBCBEF7F28F2E3A5009F134F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF7E28F2E3A5009F134F /* Message.swift */; };
+		CBCBEF8128F2E3B2009F134F /* ImageMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8028F2E3B2009F134F /* ImageMediaItem.swift */; };
+		CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8228F2E3BE009F134F /* Mocks.swift */; };
+		CBCBEF8828F2E40C009F134F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8728F2E40C009F134F /* ChatViewController.swift */; };
+		CBCBEF8A28F2E430009F134F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8928F2E430009F134F /* MessageTableViewCell.swift */; };
+		CBCBEF8E28F2E4A2009F134F /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = CBCBEF8D28F2E4A2009F134F /* MessageKit */; };
+		CBCBEF9028F2E570009F134F /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8F28F2E570009F134F /* Sender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +69,13 @@
 		CBADEE6A28EEC39B0010B5AA /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBADEE6C28EEC3AB0010B5AA /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		CBADEE7528EEC9B80010B5AA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CBCBEF7C28F2E39B009F134F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		CBCBEF7E28F2E3A5009F134F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CBCBEF8028F2E3B2009F134F /* ImageMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaItem.swift; sourceTree = "<group>"; };
+		CBCBEF8228F2E3BE009F134F /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		CBCBEF8728F2E40C009F134F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CBCBEF8928F2E430009F134F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		CBCBEF8F28F2E570009F134F /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +86,7 @@
 				CBADEE7028EEC65B0010B5AA /* SnapKit in Frameworks */,
 				CBADEE7328EEC6720010B5AA /* Then in Frameworks */,
 				CB81DA5428F1B108005164FA /* Lottie in Frameworks */,
+				CBCBEF8E28F2E4A2009F134F /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +96,7 @@
 		CB81DA5528F1B143005164FA /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				CBCBEF8428F2E3DC009F134F /* Cell */,
 				CB81DA5628F1B15D005164FA /* MessageViewController.swift */,
 			);
 			path = Message;
@@ -112,6 +129,7 @@
 		CBADEE2C28EEBCE00010B5AA /* Vincent */ = {
 			isa = PBXGroup;
 			children = (
+				CBB2953228F2E2F50094C67B /* Models */,
 				CBADEE4228EEBD410010B5AA /* Global */,
 				CBADEE4128EEBD3A0010B5AA /* Screens */,
 			);
@@ -124,6 +142,7 @@
 				CBADEE4A28EEBED10010B5AA /* Tapbar */,
 				CB81DA5828F1B17E005164FA /* Sell */,
 				CB81DA5528F1B143005164FA /* Message */,
+				CBCBEF8528F2E3F6009F134F /* Chat */,
 				CBADEE4B28EEBEDE0010B5AA /* Main */,
 				CBADEE7428EEC9850010B5AA /* Search */,
 			);
@@ -176,6 +195,7 @@
 				CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */,
 				CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */,
 				CBADEE3B28EEBCE00010B5AA /* Info.plist */,
+				CBCBEF8F28F2E570009F134F /* Sender.swift */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -244,6 +264,49 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		CBB2953228F2E2F50094C67B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBCBEF8B28F2E454009F134F /* Message */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CBCBEF8428F2E3DC009F134F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CBCBEF8928F2E430009F134F /* MessageTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CBCBEF8528F2E3F6009F134F /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				CBCBEF8628F2E400009F134F /* UIComponent */,
+				CBCBEF8728F2E40C009F134F /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		CBCBEF8628F2E400009F134F /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		CBCBEF8B28F2E454009F134F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				CBCBEF7C28F2E39B009F134F /* Channel.swift */,
+				CBCBEF7E28F2E3A5009F134F /* Message.swift */,
+				CBCBEF8028F2E3B2009F134F /* ImageMediaItem.swift */,
+				CBCBEF8228F2E3BE009F134F /* Mocks.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +327,7 @@
 				CBADEE6F28EEC65B0010B5AA /* SnapKit */,
 				CBADEE7228EEC6720010B5AA /* Then */,
 				CB81DA5328F1B108005164FA /* Lottie */,
+				CBCBEF8D28F2E4A2009F134F /* MessageKit */,
 			);
 			productName = Vincent;
 			productReference = CBADEE2A28EEBCE00010B5AA /* Vincent.app */;
@@ -297,6 +361,7 @@
 				CBADEE6E28EEC65B0010B5AA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CBADEE7128EEC6720010B5AA /* XCRemoteSwiftPackageReference "Then" */,
 				CB81DA5228F1B108005164FA /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				CBCBEF8C28F2E4A2009F134F /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = CBADEE2B28EEBCE00010B5AA /* Products */;
 			projectDirPath = "";
@@ -325,23 +390,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBADEE5F28EEC2490010B5AA /* UICollectionView+Extension.swift in Sources */,
+				CBCBEF8128F2E3B2009F134F /* ImageMediaItem.swift in Sources */,
 				CBADEE6528EEC28A0010B5AA /* UILabel+Extension.swift in Sources */,
 				CBADEE6D28EEC3AB0010B5AA /* BaseTableViewCell.swift in Sources */,
 				CBADEE5028EEBF620010B5AA /* Logger.swift in Sources */,
 				CBADEE7628EEC9B80010B5AA /* SearchViewController.swift in Sources */,
 				CBADEE5328EEBF950010B5AA /* ImageLiteral.swift in Sources */,
 				CBADEE5D28EEC2090010B5AA /* UIColor+Extension.swift in Sources */,
+				CBCBEF9028F2E570009F134F /* Sender.swift in Sources */,
 				CBADEE6928EEC3510010B5AA /* UITableView+Extension.swift in Sources */,
 				CBADEE6728EEC2E00010B5AA /* Notification+Extension.swift in Sources */,
 				CBADEE3228EEBCE00010B5AA /* MainViewController.swift in Sources */,
+				CBCBEF8A28F2E430009F134F /* MessageTableViewCell.swift in Sources */,
 				CBADEE4E28EEBF060010B5AA /* TabbarViewController.swift in Sources */,
 				CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */,
 				CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */,
+				CBCBEF7D28F2E39B009F134F /* Channel.swift in Sources */,
 				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
 				CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */,
 				CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */,
+				CBCBEF7F28F2E3A5009F134F /* Message.swift in Sources */,
+				CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */,
 				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
+				CBCBEF8828F2E40C009F134F /* ChatViewController.swift in Sources */,
 				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
 				CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */,
 				CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */,
@@ -584,6 +656,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		CBCBEF8C28F2E4A2009F134F /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -601,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CBADEE7128EEC6720010B5AA /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		CBCBEF8D28F2E4A2009F134F /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBCBEF8C28F2E4A2009F134F /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
