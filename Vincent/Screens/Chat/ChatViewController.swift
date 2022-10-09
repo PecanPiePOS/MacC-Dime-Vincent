@@ -96,7 +96,14 @@ class ChatViewController: MessagesViewController {
         messages.append(message)
         messages.sort()
         
+        let isLatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
+        let shouldScrollToBottom = messagesCollectionView.isAtBottom && isLatestMessage
+
         messagesCollectionView.reloadData()
+
+        if shouldScrollToBottom {
+          messagesCollectionView.scrollToLastItem(animated: true)
+        }
     }
     
     @objc private func didTapCameraButton() {

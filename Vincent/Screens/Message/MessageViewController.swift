@@ -22,22 +22,23 @@ class MessageViewController: BaseViewController {
     
     var channels = [Channel]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configure()
-    }
-    
-    private func configure() {
+    override func render() {
         view.addSubview(channelTableView)
         channelTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        title = "Channel"
         channels = getChannelMocks()
     }
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .automatic
+        
+        title = "메세지"
+    }
 }
 
 extension MessageViewController: UITableViewDataSource, UITableViewDelegate {
@@ -58,6 +59,7 @@ extension MessageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let channel = channels[indexPath.row]
         let viewController = ChatViewController(channel: channel)
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
