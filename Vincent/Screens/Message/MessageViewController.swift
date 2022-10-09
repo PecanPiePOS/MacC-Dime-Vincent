@@ -35,7 +35,8 @@ class MessageViewController: BaseViewController {
         super.setupNavigationBar()
 
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.largeTitleDisplayMode = .automatic
+        navigationItem.largeTitleDisplayMode = .automatic        
+        navigationItem.leftBarButtonItem = nil
         
         title = "메세지"
     }

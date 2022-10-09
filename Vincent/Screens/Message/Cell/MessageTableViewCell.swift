@@ -11,7 +11,7 @@ import SnapKit
 class MessageTableViewCell: UITableViewCell {
     lazy var chatRoomLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .mainYellow
+        label.textColor = .mainBlack
         return label
     }()
     

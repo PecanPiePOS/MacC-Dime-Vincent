@@ -13,16 +13,25 @@ import Photos
 
 class ChatViewController: MessagesViewController {
     
+    private lazy var backButton: UIButton = {
+        let button = BackButton()
+        let buttonAction = UIAction { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        button.addAction(buttonAction, for: .touchUpInside)
+        return button
+    }()
+    
     lazy var cameraBarButtonItem: InputBarButtonItem = {
         let button = InputBarButtonItem(type: .system)
-        button.tintColor = .mainYellow
+        button.tintColor = .mainBlack
         button.image = ImageLiteral.btnCamera
         button.addTarget(self, action: #selector(didTapCameraButton), for: .touchUpInside)
         return button
     }()
     
     let channel: Channel
-    var sender = Sender(senderId: "any_unique_id", displayName: "jake")
+    var sender = Sender(senderId: "sender123", displayName: "코비코비")
     var messages = [Message]()
     private var isSendingPhoto = false {
       didSet {
@@ -47,6 +56,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBackButton()
         confirmDelegates()
         configure()
         setupMessageInputBar()
@@ -56,6 +66,24 @@ class ChatViewController: MessagesViewController {
     
     deinit {
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func makeBarButtonItem<T: UIView>(with view: T) -> UIBarButtonItem {
+        return UIBarButtonItem(customView: view)
+    }
+    
+    func removeBarButtonItemOffset(with button: UIButton, offsetX: CGFloat = 0, offsetY: CGFloat = 0) -> UIView {
+        let offsetView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+        offsetView.bounds = offsetView.bounds.offsetBy(dx: offsetX, dy: offsetY)
+        offsetView.addSubview(button)
+        return offsetView
+    }
+    
+    private func setupBackButton() {
+        let leftOffsetBackButton = removeBarButtonItemOffset(with: backButton, offsetX: 10)
+        let backButton = makeBarButtonItem(with: leftOffsetBackButton)
+        
+        navigationItem.leftBarButtonItem = backButton
     }
 
     private func confirmDelegates() {
@@ -76,6 +104,9 @@ class ChatViewController: MessagesViewController {
         messageInputBar.inputTextView.tintColor = .mainYellow
         messageInputBar.sendButton.setTitleColor(.mainYellow, for: .normal)
         messageInputBar.inputTextView.placeholder = "채팅 입력"
+        messageInputBar.sendButton.image = ImageLiteral.btnSend
+        messageInputBar.sendButton.tintColor = .mainBlack
+        messageInputBar.sendButton.title = nil
     }
     
     private func removeOutgoingMessageAvatars() {
