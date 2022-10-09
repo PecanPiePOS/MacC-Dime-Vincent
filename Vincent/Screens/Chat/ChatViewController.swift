@@ -16,7 +16,7 @@ class ChatViewController: MessagesViewController {
     lazy var cameraBarButtonItem: InputBarButtonItem = {
         let button = InputBarButtonItem(type: .system)
         button.tintColor = .mainYellow
-        button.image = UIImage(systemName: "camera")
+        button.image = ImageLiteral.btnCamera
         button.addTarget(self, action: #selector(didTapCameraButton), for: .touchUpInside)
         return button
     }()
@@ -75,7 +75,7 @@ class ChatViewController: MessagesViewController {
     private func setupMessageInputBar() {
         messageInputBar.inputTextView.tintColor = .mainYellow
         messageInputBar.sendButton.setTitleColor(.mainYellow, for: .normal)
-        messageInputBar.inputTextView.placeholder = "Aa"
+        messageInputBar.inputTextView.placeholder = "채팅 입력"
     }
     
     private func removeOutgoingMessageAvatars() {

@@ -16,6 +16,9 @@ enum ImageLiteral {
     static var btnProfile: UIImage { .load(systemName: "person.crop.circle") }
     static var btnBack: UIImage { .load(systemName: "chevron.backward") }
     
+    static var btnCamera: UIImage { .load(systemName: "camera") }
+    static var btnSend: UIImage { .load(systemName: "paperplane") }
+    
 }
 
 extension UIImage {

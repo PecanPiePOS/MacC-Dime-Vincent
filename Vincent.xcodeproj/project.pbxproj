@@ -195,7 +195,6 @@
 				CBADEE2D28EEBCE00010B5AA /* AppDelegate.swift */,
 				CBADEE2F28EEBCE00010B5AA /* SceneDelegate.swift */,
 				CBADEE3B28EEBCE00010B5AA /* Info.plist */,
-				CBCBEF8F28F2E570009F134F /* Sender.swift */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -283,17 +282,9 @@
 		CBCBEF8528F2E3F6009F134F /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				CBCBEF8628F2E400009F134F /* UIComponent */,
 				CBCBEF8728F2E40C009F134F /* ChatViewController.swift */,
 			);
 			path = Chat;
-			sourceTree = "<group>";
-		};
-		CBCBEF8628F2E400009F134F /* UIComponent */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		CBCBEF8B28F2E454009F134F /* Message */ = {
@@ -302,6 +293,7 @@
 				CBCBEF7C28F2E39B009F134F /* Channel.swift */,
 				CBCBEF7E28F2E3A5009F134F /* Message.swift */,
 				CBCBEF8028F2E3B2009F134F /* ImageMediaItem.swift */,
+				CBCBEF8F28F2E570009F134F /* Sender.swift */,
 				CBCBEF8228F2E3BE009F134F /* Mocks.swift */,
 			);
 			path = Message;
