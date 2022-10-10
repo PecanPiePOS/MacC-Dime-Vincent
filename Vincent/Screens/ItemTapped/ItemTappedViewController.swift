@@ -10,7 +10,33 @@ import Then
 
 class ItemTappedViewController: BaseViewController {
 
-    // MARK: dynamic size로 변경 필요
+    private let testLabel = UILabel().then {
+        $0.text = "Image would be here"
+    }
+
+    private let bottomUIView = UIView(frame: .zero).then {
+        $0.backgroundColor = .mainBlack
+    }
+
+    private let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
+
+    private lazy var likeButton = UIButton().then {
+        let image = UIImage(systemName: "heart", withConfiguration: symbolConfiguration)
+        $0.setImage(image, for: .normal)
+        $0.tintColor = .white
+    }
+
+    // TODO: 추후 setTitle부분에 변수가 들어가야함
+    private let buyButton = UIButton().then {
+        $0.setTitle("33000원에 살게요", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        $0.setTitleColor(.black, for: .normal)
+        $0.backgroundColor = .mainYellow
+        $0.layer.cornerRadius = 15
+    }
+
+
+    // TODO: dynamic size로 변경 필요
     lazy private var scrollView = UIScrollView(frame: .zero).then {
         var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
         $0.backgroundColor = .systemBlue
@@ -71,5 +97,19 @@ class ItemTappedViewController: BaseViewController {
     }
 }
 
+extension ItemTappedViewController {
+    @objc func didPressLikeButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        if sender.isSelected {
+            sender.setImage(UIImage(systemName: "heart.fill", withConfiguration: symbolConfiguration), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "heart", withConfiguration: symbolConfiguration), for: .normal)
+        }
+    }
+
+    @objc func didPressBuyButton(_ sender: UIButton) {
+        print("should navigate to ChatView")
+    }
+}
 
 
