@@ -10,6 +10,37 @@ import Then
 
 class ItemTappedViewController: BaseViewController {
 
+    // TODO: dynamic size로 변경 필요
+    lazy private var baseScrollView = UIScrollView(frame: .zero).then {
+        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
+        $0.backgroundColor = .white
+        $0.frame = view.bounds
+        $0.contentSize = scrollContentViewSize
+    }
+
+    lazy private var baseScrollContentView = UIView(frame: .zero).then {
+        $0.backgroundColor = .systemGray4
+        $0.frame.size = baseScrollView.frame.size
+    }
+
+    private let images: [UIImage?] = [UIImage(named: "i1"), UIImage(named: "i2"), UIImage(named: "i3"), UIImage(named: "i4")]
+
+    private var imageScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
+        scrollView.isScrollEnabled = true
+        return scrollView
+    }()
+
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = images.count
+        pageControl.backgroundColor = .clear
+        pageControl.pageIndicatorTintColor = .gray
+        pageControl.currentPageIndicatorTintColor = .mainYellow
+        return pageControl
+    }()
+
     private let bottomUIView = UIView(frame: .zero).then {
         $0.backgroundColor = .mainBlack
     }
@@ -31,29 +62,6 @@ class ItemTappedViewController: BaseViewController {
         $0.layer.cornerRadius = 15
     }
 
-
-    // TODO: dynamic size로 변경 필요
-    lazy private var baseScrollView = UIScrollView(frame: .zero).then {
-        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
-        $0.backgroundColor = .systemBlue
-        $0.frame = view.bounds
-        $0.contentSize = scrollContentViewSize
-    }
-
-    lazy private var baseScrollContentView = UIView(frame: .zero).then {
-        $0.backgroundColor = .orange
-        $0.frame.size = baseScrollView.frame.size
-    }
-
-    private var imageScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.isPagingEnabled = true
-        scrollView.isScrollEnabled = true
-        return scrollView
-    }()
-
-    private let images: [UIImage?] = [UIImage(named: "i1"), UIImage(named: "i2"), UIImage(named: "i3"), UIImage(named: "i4")]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         render()
@@ -61,31 +69,24 @@ class ItemTappedViewController: BaseViewController {
         setFunctionAndDelegate()
     }
 
-    private lazy var pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.numberOfPages = images.count
-        pageControl.backgroundColor = .clear
-        pageControl.pageIndicatorTintColor = .gray
-        pageControl.currentPageIndicatorTintColor = .mainYellow
-        return pageControl
-    }()
-
     // layout
     override func render() {
-        // baseScroll
+        //baseScroll
         view.addSubview(baseScrollView)
         baseScrollView.addSubview(baseScrollContentView)
 
-        // baseScrollContentView
+        //baseScrollContentView
         baseScrollContentView.addSubviews(imageScrollView, pageControl, bottomUIView)
 
+        //imageScrollView
         imageScrollView.snp.makeConstraints {
             $0.height.equalTo(300)
             $0.width.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(baseScrollContentView.snp.top)
+            $0.top.equalTo(view.snp.top)
         }
 
+        //pageControl
         pageControl.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(imageScrollView.snp.bottom).inset(15)
@@ -106,6 +107,7 @@ class ItemTappedViewController: BaseViewController {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(30)
         }
+
         buyButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(30)
@@ -119,12 +121,14 @@ class ItemTappedViewController: BaseViewController {
     }
 
     private func setFunctionAndDelegate() {
+
+        //addTarget
         likeButton.addTarget(self, action: #selector(didPressLikeButton(_:)), for: .touchUpInside)
         buyButton.addTarget(self, action: #selector(didPressBuyButton(_:)), for: .touchUpInside)
-
-        imageScrollView.delegate = self
-
         pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
+
+        //set delegate
+        imageScrollView.delegate = self
     }
 
     private func configureScrollView() {
