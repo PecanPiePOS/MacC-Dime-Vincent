@@ -11,14 +11,14 @@ class BaseViewController: UIViewController {
     
     // MARK: - property
     
-    private lazy var backButton: UIButton = {
-        let button = BackButton()
-        let buttonAction = UIAction { _ in
-            self.navigationController?.popViewController(animated: true)
-        }
-        button.addAction(buttonAction, for: .touchUpInside)
-        return button
-    }()
+//    private lazy var backButton: UIButton = {
+//        let button = BackButton()
+//        let buttonAction = UIAction { _ in
+//            self.navigationController?.popViewController(animated: true)
+//        }
+//        button.addAction(buttonAction, for: .touchUpInside)
+//        return button
+//    }()
     
     private var activeTextField : UITextField? = nil
     
@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         render()
         configUI()
-        setupBackButton()
+//        setupBackButton()
         hidekeyboardWhenTappedAround()
         setupNavigationBar()
         
@@ -81,12 +81,12 @@ class BaseViewController: UIViewController {
     
     // MARK: - private func
     
-    private func setupBackButton() {
-        let leftOffsetBackButton = removeBarButtonItemOffset(with: backButton, offsetX: 10)
-        let backButton = makeBarButtonItem(with: leftOffsetBackButton)
-        
-        navigationItem.leftBarButtonItem = backButton
-    }
+//    private func setupBackButton() {
+//        let leftOffsetBackButton = removeBarButtonItemOffset(with: backButton, offsetX: 10)
+//        let backButton = makeBarButtonItem(with: leftOffsetBackButton)
+//
+//        navigationItem.leftBarButtonItem = backButton
+//    }
     
     private func setupInteractivePopGestureRecognizer() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
