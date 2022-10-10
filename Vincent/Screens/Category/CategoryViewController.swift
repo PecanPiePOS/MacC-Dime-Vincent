@@ -88,83 +88,89 @@ final class CategoryViewController: BaseViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide)
         }
         twoDimensionalArtBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(20)
+            $0.trailing.equalTo(digitalDrawingBtn.snp.leading).dividedBy(1.12)
         }
         digitalDrawingBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
+            $0.centerX.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            $0.leading.equalTo(twoDimensionalArtBtn.snp.trailing).offset(20)
         }
         canvasBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            $0.leading.equalTo(digitalDrawingBtn.snp.trailing).offset(20)
+            $0.leading.equalTo(digitalDrawingBtn.snp.trailing).dividedBy(0.942)
         }
         potteryBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
             $0.top.equalTo(twoDimensionalArtBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(20)
+            $0.trailing.equalTo(digitalDrawingBtn.snp.leading).dividedBy(1.12)
         }
         metalArtBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
+            $0.centerX.equalToSuperview()
             $0.top.equalTo(twoDimensionalArtBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(potteryBtn.snp.trailing).offset(20)
+            //$0.leading.equalTo(potteryBtn.snp.trailing).offset(20)
         }
         textileFashionBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
             $0.top.equalTo(twoDimensionalArtBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(metalArtBtn.snp.trailing).offset(20)
+            $0.leading.equalTo(metalArtBtn.snp.trailing).dividedBy(0.942)
         }
         artBooksBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
             $0.top.equalTo(potteryBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(20)
+            $0.trailing.equalTo(digitalDrawingBtn.snp.leading).dividedBy(1.12)
         }
         draftingSuppliesBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
             $0.top.equalTo(potteryBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(artBooksBtn.snp.trailing).offset(20)
-        }
-        papersBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
-            $0.top.equalTo(potteryBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(draftingSuppliesBtn.snp.trailing).offset(20)
-        }
-        woodenArtBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
-            $0.top.equalTo(artBooksBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(20)
-        }
-        easelBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
-            $0.top.equalTo(artBooksBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(woodenArtBtn.snp.trailing).offset(20)
-        }
-        etcBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(65)
-            $0.top.equalTo(artBooksBtn.snp.bottom).offset(20)
-            $0.leading.equalTo(easelBtn.snp.trailing).offset(20)
-        }
-        flowerImage.snp.makeConstraints {
-            $0.width.equalTo(200)
-            $0.height.equalTo(200)
-            $0.bottom.equalTo(view.snp.bottom).offset(-100)
             $0.centerX.equalToSuperview()
         }
+        papersBtn.snp.makeConstraints {
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
+            $0.top.equalTo(potteryBtn.snp.bottom).offset(20)
+            $0.leading.equalTo(draftingSuppliesBtn.snp.trailing).dividedBy(0.942)
+        }
+        woodenArtBtn.snp.makeConstraints {
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
+            $0.top.equalTo(artBooksBtn.snp.bottom).offset(20)
+            $0.trailing.equalTo(digitalDrawingBtn.snp.leading).dividedBy(1.12)
+        }
+        easelBtn.snp.makeConstraints {
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
+            $0.top.equalTo(artBooksBtn.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+        }
+        etcBtn.snp.makeConstraints {
+            $0.width.equalToSuperview().dividedBy(3.7)
+            $0.height.equalToSuperview().dividedBy(13)
+            $0.top.equalTo(artBooksBtn.snp.bottom).offset(20)
+            $0.leading.equalTo(easelBtn.snp.trailing).dividedBy(0.942)
+        }
+        flowerImage.snp.makeConstraints {
+            $0.width.equalToSuperview().dividedBy(1.8)
+            $0.height.equalToSuperview().dividedBy(4)
+            $0.bottom.equalTo(view.snp.bottom).offset(-100)
+            $0.centerX.equalToSuperview()
+            viewWillLayoutSubviews()
+        }
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        flowerImage.layer.cornerRadius = flowerImage.frame.size.height / 2
     }
 }
 
