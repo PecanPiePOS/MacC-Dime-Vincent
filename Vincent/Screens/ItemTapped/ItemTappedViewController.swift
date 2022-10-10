@@ -241,8 +241,9 @@ class ItemTappedViewController: BaseViewController {
         configureScrollView()
     }
 
-    override func viewWillLayoutSubviews() {
-        baseScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height + descriptionTextView.bounds.height / 3)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        baseScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height + descriptionTextView.bounds.height / 10)
     }
 
     private func setFunctionAndDelegate() {
@@ -310,4 +311,14 @@ extension ItemTappedViewController: UIScrollViewDelegate {
     }
 }
 
-
+// 예상 모델
+struct ItemInformation: Identifiable {
+    let id: String
+    let images: [Data]
+    let titleText: String
+    let dayText: Date
+    let descritionText: String
+    let sellerProfileImage: Data
+    let sellerNickName: String
+    let sellerInformation: String
+}
