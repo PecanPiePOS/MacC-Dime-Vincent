@@ -12,7 +12,7 @@ import Then
 class SellSelectView: UIView {
     
     let selectButtonTitle = UILabel().then {
-        $0.font = UIFont.preferredFont(forTextStyle: .body, weight: .semibold)
+        $0.font = UIFont.preferredFont(forTextStyle: .title3, weight: .semibold)
         $0.textColor = UIColor(white: 0, alpha: 0.8)
         $0.text = "카테고리 선택 *"
     }
@@ -24,7 +24,7 @@ class SellSelectView: UIView {
     }
     
     let dividerView = UIView().then {
-        $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
     }
     
     private let stackView = UIStackView().then {
@@ -34,7 +34,6 @@ class SellSelectView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        updateConstraints()
     }
     
     override func updateConstraints() {
@@ -67,7 +66,7 @@ class SellSelectView: UIView {
         dividerView.snp.makeConstraints {
             $0.height.equalTo(1)
             $0.left.right.equalToSuperview().inset(20)
-            $0.top.equalTo(self.stackView.snp.bottom).offset(10)
+            $0.top.equalTo(self.stackView.snp.bottom).offset(12)
         }
     }
     

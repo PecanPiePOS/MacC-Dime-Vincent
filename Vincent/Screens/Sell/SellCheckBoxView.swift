@@ -30,7 +30,7 @@ class SellCheckBoxView: UIView {
         $0.axis = .horizontal
     }
     
-    private let checkBoxImage = UIImageView().then {
+    let checkBoxImage = UIImageView().then {
         $0.image = UIImage(systemName: "square", withConfiguration: UIImage.SymbolConfiguration(textStyle: .title1))
         $0.tintColor = .gray
         $0.sizeToFit()

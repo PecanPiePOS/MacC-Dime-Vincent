@@ -12,7 +12,8 @@ import Then
 final class SellViewController: BaseViewController {
     
     // MARK: - Dummy Model for Adding Photos
-    let dummyPhotos: [UIImage]? = []
+    
+    let dummyPhotos: [String] = ["heart", "heart.fill", "heart", "heart.fill", "heart", "heart.fill",]
 
     // MARK: - Head Components
     
@@ -34,8 +35,13 @@ final class SellViewController: BaseViewController {
     
     // MARK: - Photo Component
     
-    // TODO: 눌러서 사진 등록 -> 버튼? UIView?
-    private let photoAddView = UIView().then {
+    private let photoAddBoxView = SellPhotoTapAddBox()
+    
+    private let photoCollectionViewFlowLayout = UICollectionViewFlowLayout().then {
+        $0.scrollDirection = .horizontal
+    }
+    
+    private lazy var addedPhotoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: photoCollectionViewFlowLayout).then {
         $0.backgroundColor = .gray
     }
     
@@ -71,8 +77,9 @@ final class SellViewController: BaseViewController {
     // MARK: - TextView
     
     private let itemDetailSectionTitle = UILabel().then {
+        $0.textColor = .black
         $0.text = "상세 설명"
-        $0.font = UIFont.preferredFont(forTextStyle: .body, weight: .semibold)
+        $0.font = UIFont.preferredFont(forTextStyle: .title2, weight: .bold)
     }
     
     private lazy var itemDetailTextView = UITextView().then {
@@ -122,10 +129,13 @@ final class SellViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
+        view.backgroundColor = .systemGray6
         sellItemTitleTextField.setLabelTextField.delegate = self
         sellItemPriceTextField.setLabelTextField.delegate = self
         itemDetailTextView.delegate = self
+        addedPhotoCollectionView.dataSource = self
+        addedPhotoCollectionView.delegate = self
+        self.addedPhotoCollectionView.register(SellPhotoAddedBox.self, forCellWithReuseIdentifier: "AddedPhotos")
         checkBoxToggle()
     }
     
@@ -136,8 +146,9 @@ final class SellViewController: BaseViewController {
         view.addSubview(closeButton)
         view.addSubview(headTitleLabel)
         view.addSubview(completeButton)
-        view.addSubview(photoAddView)
         
+        stackViewPhotoAdd.addArrangedSubview(photoAddBoxView)
+        stackViewPhotoAdd.addArrangedSubview(addedPhotoCollectionView)
         stackViewTextField.addArrangedSubview(sellItemTitleTextField)
         stackViewTextField.addArrangedSubview(sellItemPriceTextField)
         stackViewSelect.addArrangedSubview(sellItemCategoryTapped)
@@ -147,7 +158,7 @@ final class SellViewController: BaseViewController {
         stackViewTextView.addArrangedSubview(itemDetailSectionTitle)
         stackViewTextView.addArrangedSubview(itemDetailTextView)
         
-        
+        view.addSubview(stackViewPhotoAdd)
         view.addSubview(stackViewTextField)
         view.addSubview(stackViewSelect)
         view.addSubview(stackViewCheck)
@@ -168,10 +179,20 @@ final class SellViewController: BaseViewController {
             $0.right.equalTo(self.view.safeAreaInsets.right).inset(20)
         }
         
-        photoAddView.snp.makeConstraints {
+        stackViewPhotoAdd.snp.makeConstraints {
             $0.top.equalTo(self.headTitleLabel.snp.bottom).offset(18)
-            $0.left.right.equalToSuperview()
-            $0.height.equalTo(120)
+            $0.horizontalEdges.equalToSuperview()
+        }
+        
+        photoAddBoxView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview().offset(20)
+            $0.width.equalTo(self.view.frame.width/4.5)
+        }
+        
+        addedPhotoCollectionView.snp.makeConstraints {
+            $0.top.right.equalToSuperview()
+            $0.left.equalTo(self.photoAddBoxView.snp.right).offset(10)
         }
         
         sellItemTitleTextField.snp.makeConstraints {
@@ -184,7 +205,7 @@ final class SellViewController: BaseViewController {
         ])
         
         stackViewTextField.snp.makeConstraints {
-            $0.top.equalTo(self.photoAddView.snp.bottom).offset(15)
+            $0.top.equalTo(self.stackViewPhotoAdd.snp.bottom).offset(15)
             $0.left.right.equalToSuperview()
         }
         
@@ -207,12 +228,6 @@ final class SellViewController: BaseViewController {
             $0.left.equalToSuperview().inset(20)
             $0.top.equalToSuperview().inset(15)
         }
-//
-//        itemDetailTextView.snp.makeConstraints {
-//            $0.left.right.equalToSuperview()
-//            $0.bottom.equalToSuperview()
-//            $0.top.equalTo(self.itemDetailSectionTitle.snp.bottom).offset(12)
-//        }
     }
 
     override func configUI() {
@@ -240,12 +255,35 @@ extension SellViewController {
     }
 }
 
-    // MARK: - TextViewDelegate
+    // MARK: - UICollectionView DataSource
+extension SellViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dummyPhotos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddedPhotos", for: indexPath) as? SellPhotoAddedBox else { return UICollectionViewCell()}
+        
+        cell.addedImage.image = UIImage(systemName: dummyPhotos[indexPath.row])
+        cell.backgroundColor = .red
+        
+        return cell
+    }
+}
+
+    // MARK: - UICollectionView Delegate
+extension SellViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width/5, height: self.view.frame.width/5)
+    }
+}
+
+    // MARK: - TextView Delegate
 
 extension SellViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == itemDescInfoTitle {
-            textView.font = UIFont.preferredFont(forTextStyle: .body, weight: .regular)
+            textView.font = UIFont.preferredFont(forTextStyle: .title3, weight: .regular)
             textView.text = nil
             textView.textColor = .black
         }

@@ -11,19 +11,15 @@ import Then
 
 class SellTextFieldView: UIView, UITextFieldDelegate {
     
-    
     let setLabelTextField = UITextField().then {
-//        $0.backgroundColor = .red
-//        $0.clearButtonMode = .whileEditing
         $0.autocapitalizationType = .none
         $0.autocorrectionType = .no
-        $0.enablesReturnKeyAutomatically = true
         $0.textColor = UIColor(white: 0, alpha: 0.8)
-        $0.font = UIFont.preferredFont(forTextStyle: .body, weight: .bold)
+        $0.font = UIFont.preferredFont(forTextStyle: .title3, weight: .bold)
     }
     
     let dividerView = UIView().then {
-        $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
     }
     
     let stackView = UIStackView().then {
@@ -34,7 +30,6 @@ class SellTextFieldView: UIView, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configUI()
-        updateConstraints()
     }
     
     override func updateConstraints() {
@@ -66,7 +61,7 @@ class SellTextFieldView: UIView, UITextFieldDelegate {
     
     func configUI(){
         setLabelTextField.delegate = self
-        setLabelTextField.attributedPlaceholder = NSAttributedString(string: "hello", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor(white: 0, alpha: 0.5)])
+        setLabelTextField.attributedPlaceholder = NSAttributedString(string: "hello", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title3, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor(white: 0, alpha: 0.5)])
     }
     
     required init?(coder: NSCoder) {
