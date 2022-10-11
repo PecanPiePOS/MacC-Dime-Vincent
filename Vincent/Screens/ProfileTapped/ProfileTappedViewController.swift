@@ -21,13 +21,20 @@ class ProfileTappedViewController: BaseViewController {
     }
 
     let profileTableView = UITableView().then {
-        $0.rowHeight = 65
+        $0.backgroundColor = .clear
+        $0.isScrollEnabled = false
+        $0.rowHeight = 70
         $0.showsVerticalScrollIndicator = false
         $0.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
         $0.tableFooterView = UIView(frame: .zero)
     }
 
     private let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
+
+    private let wallPaper = UIImageView().then {
+        $0.image = UIImage(named: "wallpaperNone")
+        $0.contentMode = .scaleAspectFit
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +44,21 @@ class ProfileTappedViewController: BaseViewController {
     }
 
     override func render() {
-        view.addSubview(profileTableView)
+        view.addSubviews(wallPaper, profileTableView)
+        wallPaper.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         profileTableView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
             $0.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(700)
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 
     private func setFunctionsAndDelegate() {
         profileTableView.delegate = self
         profileTableView.dataSource = self
-
     }
 
     override func configUI() {
@@ -62,14 +71,15 @@ extension ProfileTappedViewController: UITableViewDataSource {
     //cell control
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
+        cell.backgroundColor = .clear
 
         switch ProfileSection(rawValue: indexPath.section) {
         case .profileInformation:
             cell.setupCellData(ProfileSection.profileInformation.sectionOption[indexPath.row], spacing: 0, isUserProfileCell: true)
         case .myActivity:
-            cell.setupCellData(ProfileSection.myActivity.sectionOption[indexPath.row], spacing: 10, isUserProfileCell: false)
+            cell.setupCellData(ProfileSection.myActivity.sectionOption[indexPath.row], spacing: 5, isUserProfileCell: false)
         case .service:
-            cell.setupCellData(ProfileSection.service.sectionOption[indexPath.row], spacing: 10, isUserProfileCell: false)
+            cell.setupCellData(ProfileSection.service.sectionOption[indexPath.row], spacing: 5, isUserProfileCell: false)
         case .none:
             print("default")
         }
@@ -77,7 +87,9 @@ extension ProfileTappedViewController: UITableViewDataSource {
         cell.selectedBackgroundView = UIView(frame: .zero)
         return cell
     }
+}
 
+extension ProfileTappedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch ProfileSection(rawValue: section) {
         case .profileInformation: return 1
@@ -96,10 +108,6 @@ extension ProfileTappedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         testHeaderTitle[section]
     }
-
-}
-
-extension ProfileTappedViewController: UITableViewDelegate {
 }
 
 
