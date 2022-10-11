@@ -25,21 +25,17 @@ class ItemTappedViewController: BaseViewController {
 
     private let images: [UIImage?] = [UIImage(named: "i1"), UIImage(named: "i2"), UIImage(named: "i3"), UIImage(named: "i4")]
 
-    private var imageScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.isPagingEnabled = true
-        scrollView.isScrollEnabled = true
-        return scrollView
-    }()
+    private var imageScrollView = UIScrollView().then {
+        $0.isPagingEnabled = true
+        $0.isScrollEnabled = true
+    }
 
-    private lazy var pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.numberOfPages = images.count
-        pageControl.backgroundColor = .clear
-        pageControl.pageIndicatorTintColor = .gray
-        pageControl.currentPageIndicatorTintColor = .mainYellow
-        return pageControl
-    }()
+    private lazy var pageControl = UIPageControl().then {
+        $0.numberOfPages = images.count
+        $0.backgroundColor = .clear
+        $0.pageIndicatorTintColor = .gray
+        $0.currentPageIndicatorTintColor = .mainYellow
+    }
 
     private let bottomUIView = UIView(frame: .zero).then {
         $0.backgroundColor = .mainBlack
