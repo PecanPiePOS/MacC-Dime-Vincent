@@ -12,10 +12,10 @@ class ItemTappedViewController: BaseViewController {
 
     // TODO: dynamic size로 변경 필요
     lazy private var baseScrollView = UIScrollView(frame: .zero).then {
-        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
+//        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
         $0.backgroundColor = .white
         $0.frame = view.bounds
-        $0.contentSize = scrollContentViewSize
+//        $0.contentSize = scrollContentViewSize
     }
 
     lazy private var baseScrollContentView = UIView(frame: .zero).then {
@@ -61,12 +61,13 @@ class ItemTappedViewController: BaseViewController {
     private let titleTextView = UITextView().then {
         $0.text = "루키의 물건들 가격 제안 가능!! 10000만원 이상 부터 "
         $0.isScrollEnabled = false
-        $0.font = .systemFont(ofSize: 20)
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.isUserInteractionEnabled = false
     }
 
     private let dayLabel = UILabel().then {
         $0.text = "3일전"
-        $0.font = .systemFont(ofSize: 14)
+        $0.font = .systemFont(ofSize: 14, weight: .semibold)
         $0.textColor = .systemGray4
     }
 
@@ -75,6 +76,7 @@ class ItemTappedViewController: BaseViewController {
         $0.setLineAndLetterSpacing(text)
         $0.font = .systemFont(ofSize: 16)
         $0.isScrollEnabled = false
+        $0.isUserInteractionEnabled = false
     }
 
     private let firstSeperator = UIView().then {
@@ -132,7 +134,7 @@ class ItemTappedViewController: BaseViewController {
             $0.height.equalTo(300)
             $0.width.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(baseScrollContentView.snp.top).inset(-50)
+            $0.top.equalTo(baseScrollContentView.snp.top)
         }
 
         //pageControl
@@ -239,7 +241,7 @@ class ItemTappedViewController: BaseViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        baseScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height + descriptionTextView.bounds.height / 10)
+        baseScrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height + descriptionTextView.bounds.height / 3)
     }
 
     private func setFunctionAndDelegate() {
