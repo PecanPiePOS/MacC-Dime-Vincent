@@ -13,22 +13,23 @@ class ProfileTableViewCell: UITableViewCell {
 
     private let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
 
-    var isUserProfileCell: Bool = false
-    var cellTextLabel = UILabel().then {
+    private var isUserProfileCell: Bool = false
+
+    private var cellTextLabel = UILabel().then {
         $0.text = ""
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
         $0.textColor = .white
     }
     //MyProfile
-    let userProfileImage = UIImageView().then {
+    private let userProfileImage = UIImageView().then {
         $0.image = UIImage(systemName: "drop")
     }
-    let userNickName = UILabel().then {
+    private let userNickName = UILabel().then {
         $0.textColor = .white
         $0.text = "다임다임"
         $0.font = .systemFont(ofSize: 20, weight: .semibold)
     }
-    let userID = UILabel().then {
+    private let userID = UILabel().then {
         $0.textColor = .white
         $0.font = .systemFont(ofSize: 14, weight: .light)
         $0.text = "@zdshld2134"

@@ -8,19 +8,18 @@ import Then
 import SnapKit
 import UIKit
 
-
 class ProfileTappedViewController: BaseViewController {
-    let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
-    let userProfileCell = UIView(frame: .zero)
-    let userNickName = UILabel().then {
+    private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
+    private let userProfileCell = UIView(frame: .zero)
+    private let userNickName = UILabel().then {
         $0.text = "다임다임"
     }
 
-    let userID = UILabel().then {
+    private let userID = UILabel().then {
         $0.text = "@zdshld2134"
     }
 
-    let profileTableView = UITableView().then {
+    private let profileTableView = UITableView().then {
         $0.backgroundColor = .clear
         $0.isScrollEnabled = false
         $0.rowHeight = 70
@@ -64,12 +63,11 @@ class ProfileTappedViewController: BaseViewController {
     override func configUI() {
         super.configUI()
     }
-
 }
 
 extension ProfileTappedViewController: UITableViewDataSource {
     //cell control
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.backgroundColor = .clear
 
@@ -90,22 +88,22 @@ extension ProfileTappedViewController: UITableViewDataSource {
 }
 
 extension ProfileTappedViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch ProfileSection(rawValue: section) {
-        case .profileInformation: return 1
+        case .profileInformation: return MyProfile.allCases.count
         case .myActivity: return MyActivities.allCases.count
-        case .service: return 2
+        case .service: return ServiceOption.allCases.count
         case .none:
             return 0
         }
     }
 
     //section number
-    func numberOfSections(in tableView: UITableView) -> Int {
+    internal func numberOfSections(in tableView: UITableView) -> Int {
         return testHeaderTitle.count
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    internal func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         testHeaderTitle[section]
     }
 }
