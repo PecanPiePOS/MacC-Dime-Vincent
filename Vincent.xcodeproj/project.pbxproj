@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10DAAE4D28F539B1000CB45C /* ArtItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE4C28F539B1000CB45C /* ArtItemCollectionViewController.swift */; };
+		10DAAE4F28F539C1000CB45C /* ArtItemCollectionViewcellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE4E28F539C1000CB45C /* ArtItemCollectionViewcellController.swift */; };
+		10DAAE5128F539CA000CB45C /* ArtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE5028F539CA000CB45C /* ArtItem.swift */; };
 		CB81DA5428F1B108005164FA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CB81DA5328F1B108005164FA /* Lottie */; };
 		CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5628F1B15D005164FA /* MessageViewController.swift */; };
 		CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5928F1B19E005164FA /* SellViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10DAAE4C28F539B1000CB45C /* ArtItemCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemCollectionViewController.swift; sourceTree = "<group>"; };
+		10DAAE4E28F539C1000CB45C /* ArtItemCollectionViewcellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemCollectionViewcellController.swift; sourceTree = "<group>"; };
+		10DAAE5028F539CA000CB45C /* ArtItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItem.swift; sourceTree = "<group>"; };
 		CB81DA5628F1B15D005164FA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		CB81DA5928F1B19E005164FA /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		CBADEE2A28EEBCE00010B5AA /* Vincent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vincent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10DAAE4B28F5393C000CB45C /* ArtItem */ = {
+			isa = PBXGroup;
+			children = (
+				10DAAE4C28F539B1000CB45C /* ArtItemCollectionViewController.swift */,
+				10DAAE4E28F539C1000CB45C /* ArtItemCollectionViewcellController.swift */,
+				10DAAE5028F539CA000CB45C /* ArtItem.swift */,
+			);
+			path = ArtItem;
+			sourceTree = "<group>";
+		};
 		CB81DA5528F1B143005164FA /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +137,7 @@
 		CBADEE4128EEBD3A0010B5AA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				10DAAE4B28F5393C000CB45C /* ArtItem */,
 				CBADEE4A28EEBED10010B5AA /* Tapbar */,
 				CB81DA5828F1B17E005164FA /* Sell */,
 				CB81DA5528F1B143005164FA /* Message */,
@@ -338,11 +355,14 @@
 				CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */,
 				CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */,
 				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
+				10DAAE5128F539CA000CB45C /* ArtItem.swift in Sources */,
 				CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */,
 				CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */,
 				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
+				10DAAE4F28F539C1000CB45C /* ArtItemCollectionViewcellController.swift in Sources */,
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
 				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
+				10DAAE4D28F539B1000CB45C /* ArtItemCollectionViewController.swift in Sources */,
 				CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */,
 				CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */,
 			);
