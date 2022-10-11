@@ -11,7 +11,7 @@ import Then
 
 class SellCheckBoxView: UIView {
     
-    let configImageUI = UIImage.SymbolConfiguration(textStyle: .largeTitle)
+    let configImageUI = UIImage.SymbolConfiguration(textStyle: .title1)
     
     var checkBool: Bool = false {
         didSet {
@@ -31,7 +31,7 @@ class SellCheckBoxView: UIView {
     }
     
     private let checkBoxImage = UIImageView().then {
-        $0.image = UIImage(systemName: "square", withConfiguration: UIImage.SymbolConfiguration(textStyle: .largeTitle))
+        $0.image = UIImage(systemName: "square", withConfiguration: UIImage.SymbolConfiguration(textStyle: .title1))
         $0.tintColor = .gray
         $0.sizeToFit()
     }
@@ -59,19 +59,19 @@ class SellCheckBoxView: UIView {
         
         stackView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalToSuperview().inset(10)
-            $0.bottom.equalToSuperview().inset(30)
+            $0.top.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview().inset(20)
         }
         
         checkBoxImage.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview()
-            $0.width.equalTo(40)
+            $0.width.equalTo(32)
         }
         
         checkTitle.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.left.equalTo(self.checkBoxImage.snp.right).offset(3)
+            $0.left.equalTo(self.checkBoxImage.snp.right).offset(5)
         }
     }
     

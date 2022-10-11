@@ -54,7 +54,7 @@ class SellTextFieldView: UIView, UITextFieldDelegate {
         }
         
         setLabelTextField.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(15)
             $0.left.equalToSuperview().inset(24)
         }
         

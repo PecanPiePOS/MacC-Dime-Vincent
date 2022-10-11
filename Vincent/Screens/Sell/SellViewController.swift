@@ -10,6 +10,9 @@ import SnapKit
 import Then
 
 final class SellViewController: BaseViewController {
+    
+    // MARK: - Dummy Model for Adding Photos
+    let dummyPhotos: [UIImage]? = []
 
     // MARK: - Head Components
     
@@ -38,7 +41,7 @@ final class SellViewController: BaseViewController {
     
     // MARK: - Sell Item Properties Compononts
     
-    private let itemDescInfoTitle = "여기에 게시할 내용을 작성해주세요!\n물건에 대한 상세한 정보가 담길수록 구매자는 물건에 대한 신뢰도를 얻어요.\n그리고 구매가 더 잘 이루어져요!"
+    private let itemDescInfoTitle = "여기에 게시할 내용을 작성해주세요! 물건에 대한 상세한 정보가 담길수록 구매자는 물건에 대한 신뢰도를 얻어요. 그리고 구매가 더 잘 이루어져요!"
     
     private let sellItemTitleTextField = SellTextFieldView().then {
         $0.setLabelTextField.placeholder = "글 제목 *"
@@ -57,7 +60,7 @@ final class SellViewController: BaseViewController {
         $0.checkTitle.text = "가격 제안 좋아요!"
     }
     
-    private let sellItmeCategoryTapped = SellSelectView().then {
+    private let sellItemCategoryTapped = SellSelectView().then {
         $0.selectButtonTitle.text = "카테고리 선택 *"
     }
     
@@ -66,19 +69,32 @@ final class SellViewController: BaseViewController {
     }
     
     // MARK: - TextView
+    
+    private let itemDetailSectionTitle = UILabel().then {
+        $0.text = "상세 설명"
+        $0.font = UIFont.preferredFont(forTextStyle: .body, weight: .semibold)
+    }
+    
     private lazy var itemDetailTextView = UITextView().then {
-        $0.textInputView.backgroundColor = .red
-        $0.font = UIFont.preferredFont(forTextStyle: .caption1, weight: .light)
-        $0.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        $0.autocapitalizationType = .none
+        $0.autocorrectionType = .no
+        $0.textInputView.backgroundColor = .white
+        $0.font = UIFont.preferredFont(forTextStyle: .subheadline, weight: .light)
+        $0.textContainerInset = UIEdgeInsets(top: 5, left: -5, bottom: 30, right: 20)
         $0.textColor = .gray
         $0.isEditable = true
         $0.dataDetectorTypes = .all
-        $0.backgroundColor = .green
+        $0.backgroundColor = .white
         $0.text = itemDescInfoTitle
         $0.textAlignment = .left
     }
     
     // MARK: - StackViews
+    
+    private let stackViewPhotoAdd = UIStackView().then {
+        $0.axis = .horizontal
+    }
+    
     private let stackViewTextField = UIStackView().then {
         $0.spacing = 0
         $0.backgroundColor = .white
@@ -94,6 +110,12 @@ final class SellViewController: BaseViewController {
     private let stackViewCheck = UIStackView().then {
         $0.backgroundColor = .white
         $0.axis = .horizontal
+    }
+    
+    private let stackViewTextView = UIStackView().then {
+        $0.spacing = 10
+        $0.axis = .vertical
+        $0.backgroundColor = .white
     }
     
     // MARK: - Life cycle
@@ -115,18 +137,21 @@ final class SellViewController: BaseViewController {
         view.addSubview(headTitleLabel)
         view.addSubview(completeButton)
         view.addSubview(photoAddView)
-        view.addSubview(itemDetailTextView)
         
         stackViewTextField.addArrangedSubview(sellItemTitleTextField)
         stackViewTextField.addArrangedSubview(sellItemPriceTextField)
-        stackViewSelect.addArrangedSubview(sellItmeCategoryTapped)
+        stackViewSelect.addArrangedSubview(sellItemCategoryTapped)
         stackViewSelect.addArrangedSubview(sellItemBrandTapped)
         stackViewCheck.addArrangedSubview(sellCheckBoxFree)
         stackViewCheck.addArrangedSubview(sellCheckBoxNego)
+        stackViewTextView.addArrangedSubview(itemDetailSectionTitle)
+        stackViewTextView.addArrangedSubview(itemDetailTextView)
+        
         
         view.addSubview(stackViewTextField)
         view.addSubview(stackViewSelect)
         view.addSubview(stackViewCheck)
+        view.addSubview(stackViewTextView)
         
         closeButton.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
@@ -144,9 +169,13 @@ final class SellViewController: BaseViewController {
         }
         
         photoAddView.snp.makeConstraints {
-            $0.top.equalTo(self.headTitleLabel.snp.bottom).offset(24)
+            $0.top.equalTo(self.headTitleLabel.snp.bottom).offset(18)
             $0.left.right.equalToSuperview()
             $0.height.equalTo(120)
+        }
+        
+        sellItemTitleTextField.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(12)
         }
         
         NSLayoutConstraint.activate([
@@ -155,7 +184,7 @@ final class SellViewController: BaseViewController {
         ])
         
         stackViewTextField.snp.makeConstraints {
-            $0.top.equalTo(self.photoAddView.snp.bottom).offset(30)
+            $0.top.equalTo(self.photoAddView.snp.bottom).offset(15)
             $0.left.right.equalToSuperview()
         }
         
@@ -165,35 +194,31 @@ final class SellViewController: BaseViewController {
         }
         
         stackViewCheck.snp.makeConstraints {
-            $0.top.equalTo(self.stackViewSelect.snp.bottom)
+            $0.top.equalTo(self.stackViewSelect.snp.bottom).inset(5)
             $0.left.right.equalToSuperview()
         }
         
-        itemDetailTextView.snp.makeConstraints {
-            $0.left.right.equalToSuperview()
+        stackViewTextView.snp.makeConstraints {
             $0.top.equalTo(self.stackViewCheck.snp.bottom).offset(12)
+            $0.left.right.bottom.equalToSuperview()
         }
         
+        itemDetailSectionTitle.snp.makeConstraints {
+            $0.left.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(15)
+        }
+//
+//        itemDetailTextView.snp.makeConstraints {
+//            $0.left.right.equalToSuperview()
+//            $0.bottom.equalToSuperview()
+//            $0.top.equalTo(self.itemDetailSectionTitle.snp.bottom).offset(12)
+//        }
     }
-    
+
     override func configUI() {
         super.configUI()
-        
-    }
-
-}
-
-    // MARK: - TextViewDelegate
-
-extension SellViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == itemDescInfoTitle {
-            textView.text = nil
-            textView.textColor = .black
-        }
     }
 }
-
     // MARK: - Action functions
 
 extension SellViewController {
@@ -212,6 +237,26 @@ extension SellViewController {
     @objc func negotiationBoxToggle() {
         sellCheckBoxNego.checkBool.toggle()
         print("네고할래요 : \(sellCheckBoxNego.checkBool)")
+    }
+}
+
+    // MARK: - TextViewDelegate
+
+extension SellViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == itemDescInfoTitle {
+            textView.font = UIFont.preferredFont(forTextStyle: .body, weight: .regular)
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == "" {
+            textView.font = UIFont.preferredFont(forTextStyle: .subheadline, weight: .light)
+            textView.text = itemDescInfoTitle
+            textView.textColor = .gray
+        }
     }
 }
 

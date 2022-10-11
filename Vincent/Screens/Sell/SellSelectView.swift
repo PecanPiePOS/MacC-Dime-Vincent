@@ -43,7 +43,6 @@ class SellSelectView: UIView {
     }
     
     func render() {
-        
         stackView.addArrangedSubview(selectButtonTitle)
         stackView.addArrangedSubview(chevronImage)
         
@@ -57,12 +56,12 @@ class SellSelectView: UIView {
         }
         
         selectButtonTitle.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(15)
             $0.left.equalToSuperview().inset(24)
         }
         
         chevronImage.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(15)
+            $0.top.equalToSuperview().inset(10)
         }
         
         dividerView.snp.makeConstraints {
@@ -73,7 +72,6 @@ class SellSelectView: UIView {
     }
     
     func configUI() {
-        
     }
     
     required init?(coder: NSCoder) {
