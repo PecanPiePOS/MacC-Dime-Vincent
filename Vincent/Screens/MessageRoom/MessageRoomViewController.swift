@@ -1,5 +1,5 @@
 //
-//  ChatViewController.swift
+//  MessageRoomViewController.swift
 //  Vincent
 //
 //  Created by COBY_PRO on 2022/10/09.
@@ -13,7 +13,7 @@ import Photos
 import SnapKit
 import Then
 
-final class ChatViewController: MessagesViewController {
+final class MessageRoomViewController: MessagesViewController {
     
     // MARK: - property
     
@@ -21,29 +21,31 @@ final class ChatViewController: MessagesViewController {
         $0.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
     }
     
-    lazy var cameraBarButtonItem = InputBarButtonItem().then {
+    private lazy var cameraBarButtonItem = InputBarButtonItem().then {
         $0.tintColor = .mainBlack
         $0.image = ImageLiteral.btnCamera
         $0.addTarget(self, action: #selector(didTapCameraButton), for: .touchUpInside)
     }
     
+    private lazy var goodInfoView = GoodInfoView()
+    
     let channel: Channel
-    var sender = Sender(senderId: "sender123", displayName: "코비코비")
+    var sender = Sender(senderId: "coby5502", displayName: "코비코비")
     var messages = [Message]()
     private var isSendingPhoto = false {
-      didSet {
-        messageInputBar.leftStackViewItems.forEach { item in
-          guard let item = item as? InputBarButtonItem else {
-            return
-          }
-          item.isEnabled = !self.isSendingPhoto
+        didSet {
+            messageInputBar.leftStackViewItems.forEach { item in
+                guard let item = item as? InputBarButtonItem else {
+                    return
+                }
+                item.isEnabled = !self.isSendingPhoto
+            }
         }
-      }
     }
     
     init(channel: Channel) {
-      self.channel = channel
-      super.init(nibName: nil, bundle: nil)
+        self.channel = channel
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -53,19 +55,53 @@ final class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        render()
+        setupNavigationBar()
         setupBackButton()
         confirmDelegates()
-        configure()
         setupMessageInputBar()
         removeOutgoingMessageAvatars()
         addCameraBarButtonToMessageInputBar()
     }
     
-    deinit {
-        navigationController?.navigationBar.prefersLargeTitles = true
+    private func render() {
+        messagesCollectionView.removeFromSuperview()
+        self.view.addSubviews(goodInfoView, messagesCollectionView)
+        
+        goodInfoView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
+        messagesCollectionView.snp.makeConstraints {
+            $0.top.equalTo(goodInfoView.snp.bottom)
+            $0.bottom.equalTo(inputContainerView.snp.top)
+            $0.leading.trailing.equalToSuperview()
+        }
     }
     
-    // MARK: - func
+    private func setupNavigationBar() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        let appearance = UINavigationBarAppearance()
+        let font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        let largeFont = UIFont.systemFont(ofSize: 34, weight: .semibold)
+        
+        appearance.titleTextAttributes = [.font: font]
+        appearance.largeTitleTextAttributes = [.font: largeFont]
+        appearance.shadowColor = .clear
+        appearance.backgroundColor = .white
+        
+        navigationBar.standardAppearance = appearance
+        navigationBar.compactAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .automatic
+        
+        title = channel.userName
+    }
+    
+    // MARK: - helper func
     
     func makeBarButtonItem<T: UIView>(with view: T) -> UIBarButtonItem {
         return UIBarButtonItem(customView: view)
@@ -78,25 +114,25 @@ final class ChatViewController: MessagesViewController {
         return offsetView
     }
     
+    // MARK: - private func
+    
     private func setupBackButton() {
         let leftOffsetBackButton = removeBarButtonItemOffset(with: backButton, offsetX: 10)
         let backButton = makeBarButtonItem(with: leftOffsetBackButton)
         
         navigationItem.leftBarButtonItem = backButton
     }
-
+    
+    @objc private func didTapBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     private func confirmDelegates() {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
         messageInputBar.delegate = self
-    }
-    
-    private func configure() {
-        title = channel.userName
-        navigationController?.navigationBar.prefersLargeTitles = false
-        messages = getMessagesMock()
     }
     
     private func setupMessageInputBar() {
@@ -128,16 +164,12 @@ final class ChatViewController: MessagesViewController {
         
         let isLatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
         let shouldScrollToBottom = messagesCollectionView.isAtBottom && isLatestMessage
-
+        
         messagesCollectionView.reloadData()
-
+        
         if shouldScrollToBottom {
-          messagesCollectionView.scrollToLastItem(animated: true)
+            messagesCollectionView.scrollToLastItem(animated: true)
         }
-    }
-    
-    @objc private func didTapBackButton() {
-        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func didTapCameraButton() {
@@ -153,7 +185,7 @@ final class ChatViewController: MessagesViewController {
     }
 }
 
-extension ChatViewController: MessagesDataSource {
+extension MessageRoomViewController: MessagesDataSource {
     var currentSender: SenderType {
         return sender
     }
@@ -173,7 +205,7 @@ extension ChatViewController: MessagesDataSource {
     }
 }
 
-extension ChatViewController: MessagesLayoutDelegate {
+extension MessageRoomViewController: MessagesLayoutDelegate {
     // 아래 여백
     func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return CGSize(width: 0, height: 8)
@@ -186,7 +218,7 @@ extension ChatViewController: MessagesLayoutDelegate {
 }
 
 // 상대방이 보낸 메시지, 내가 보낸 메시지를 구분하여 색상과 모양 지정
-extension ChatViewController: MessagesDisplayDelegate {
+extension MessageRoomViewController: MessagesDisplayDelegate {
     // 말풍선의 배경 색상
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? .mainYellow : .mainBlack
@@ -203,28 +235,24 @@ extension ChatViewController: MessagesDisplayDelegate {
     }
 }
 
-extension ChatViewController: InputBarAccessoryViewDelegate {
+extension MessageRoomViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let message = Message(content: text)
-        
-        // TODO
-//        saveMessageAndScrollToLastItem(message)
-        
         insertNewMessage(message)
         inputBar.inputTextView.text.removeAll()
     }
 }
 
-extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MessageRoomViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         
         if let asset = info[.phAsset] as? PHAsset {
             let imageSize = CGSize(width: 500, height: 500)
             PHImageManager.default().requestImage(for: asset,
-                                                     targetSize: imageSize,
-                                                     contentMode: .aspectFit,
-                                                     options: nil) { image, _ in
+                                                  targetSize: imageSize,
+                                                  contentMode: .aspectFit,
+                                                  options: nil) { image, _ in
                 guard let image = image else { return }
                 self.sendPhoto(image)
             }

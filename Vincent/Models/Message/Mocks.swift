@@ -15,11 +15,3 @@ func getChannelMocks() -> [Channel] {
         Channel(id: String(2), userName: "김연호", chatDate: "3주 전", chatLast: "흐헹")
     ]
 }
-
-func getMessagesMock() -> [Message] {
-    return [
-        Message(content: "안뇽"),
-        Message(content: "물건"),
-        Message(content: "내놔")
-    ]
-}

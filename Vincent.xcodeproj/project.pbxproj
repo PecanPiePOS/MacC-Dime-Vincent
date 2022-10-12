@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA02F028F451130006C0B2 /* CategoryViewController.swift */; };
 		A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */; };
+		CB18F2D928F67D5400742C30 /* GoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F2D828F67D5400742C30 /* GoodInfoView.swift */; };
 		CB81DA5428F1B108005164FA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CB81DA5328F1B108005164FA /* Lottie */; };
 		CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5628F1B15D005164FA /* MessageViewController.swift */; };
 		CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5928F1B19E005164FA /* SellViewController.swift */; };
@@ -39,7 +40,7 @@
 		CBCBEF7F28F2E3A5009F134F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF7E28F2E3A5009F134F /* Message.swift */; };
 		CBCBEF8128F2E3B2009F134F /* ImageMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8028F2E3B2009F134F /* ImageMediaItem.swift */; };
 		CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8228F2E3BE009F134F /* Mocks.swift */; };
-		CBCBEF8828F2E40C009F134F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8728F2E40C009F134F /* ChatViewController.swift */; };
+		CBCBEF8828F2E40C009F134F /* MessageRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8728F2E40C009F134F /* MessageRoomViewController.swift */; };
 		CBCBEF8A28F2E430009F134F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8928F2E430009F134F /* MessageTableViewCell.swift */; };
 		CBCBEF8E28F2E4A2009F134F /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = CBCBEF8D28F2E4A2009F134F /* MessageKit */; };
 		CBCBEF9028F2E570009F134F /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBEF8F28F2E570009F134F /* Sender.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		7BBA02F028F451130006C0B2 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTappedViewController.swift; sourceTree = "<group>"; };
+		CB18F2D828F67D5400742C30 /* GoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInfoView.swift; sourceTree = "<group>"; };
 		CB81DA5628F1B15D005164FA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		CB81DA5928F1B19E005164FA /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		CBADEE2A28EEBCE00010B5AA /* Vincent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vincent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +79,7 @@
 		CBCBEF7E28F2E3A5009F134F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CBCBEF8028F2E3B2009F134F /* ImageMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaItem.swift; sourceTree = "<group>"; };
 		CBCBEF8228F2E3BE009F134F /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
-		CBCBEF8728F2E40C009F134F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CBCBEF8728F2E40C009F134F /* MessageRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRoomViewController.swift; sourceTree = "<group>"; };
 		CBCBEF8928F2E430009F134F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		CBCBEF8F28F2E570009F134F /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,14 @@
 				A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */,
 			);
 			path = ItemTapped;
+			sourceTree = "<group>";
+		};
+		CB18F2D728F67D4600742C30 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				CB18F2D828F67D5400742C30 /* GoodInfoView.swift */,
+			);
+			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		CB81DA5528F1B143005164FA /* Message */ = {
@@ -164,7 +174,7 @@
 				CBADEE4A28EEBED10010B5AA /* Tapbar */,
 				CB81DA5828F1B17E005164FA /* Sell */,
 				CB81DA5528F1B143005164FA /* Message */,
-				CBCBEF8528F2E3F6009F134F /* Chat */,
+				CBCBEF8528F2E3F6009F134F /* MessageRoom */,
 				CBADEE4B28EEBEDE0010B5AA /* Main */,
 				CBADEE7428EEC9850010B5AA /* Search */,
 			);
@@ -301,12 +311,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		CBCBEF8528F2E3F6009F134F /* Chat */ = {
+		CBCBEF8528F2E3F6009F134F /* MessageRoom */ = {
 			isa = PBXGroup;
 			children = (
-				CBCBEF8728F2E40C009F134F /* ChatViewController.swift */,
+				CB18F2D728F67D4600742C30 /* UIComponent */,
+				CBCBEF8728F2E40C009F134F /* MessageRoomViewController.swift */,
 			);
-			path = Chat;
+			path = MessageRoom;
 			sourceTree = "<group>";
 		};
 		CBCBEF8B28F2E454009F134F /* Message */ = {
@@ -414,6 +425,7 @@
 				CBCBEF9028F2E570009F134F /* Sender.swift in Sources */,
 				CBADEE6928EEC3510010B5AA /* UITableView+Extension.swift in Sources */,
 				7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */,
+				CB18F2D928F67D5400742C30 /* GoodInfoView.swift in Sources */,
 				CBADEE6728EEC2E00010B5AA /* Notification+Extension.swift in Sources */,
 				CBADEE3228EEBCE00010B5AA /* MainViewController.swift in Sources */,
 				CBCBEF8A28F2E430009F134F /* MessageTableViewCell.swift in Sources */,
@@ -429,7 +441,7 @@
 				CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */,
 				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
-				CBCBEF8828F2E40C009F134F /* ChatViewController.swift in Sources */,
+				CBCBEF8828F2E40C009F134F /* MessageRoomViewController.swift in Sources */,
 				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
 				CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */,
 				CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */,

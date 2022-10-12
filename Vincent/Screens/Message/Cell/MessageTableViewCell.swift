@@ -37,7 +37,7 @@ class MessageTableViewCell: BaseTableViewCell {
         $0.font = UIFont.systemFont(ofSize: 13)
     }
     
-    lazy var chatGoodImageView = UIImageView().then {
+    lazy var goodImageView = UIImageView().then {
         let url = URL(string: "https://picsum.photos/600/600/?random")
         $0.load(url: url!)
         $0.layer.cornerRadius = 5
@@ -47,7 +47,7 @@ class MessageTableViewCell: BaseTableViewCell {
     // MARK: - func
     
     override func render() {
-        contentView.addSubviews(chatUserImageView, chatUserNameLabel, chatDateLabel, chatLastLabel, chatGoodImageView)
+        contentView.addSubviews(chatUserImageView, chatUserNameLabel, chatDateLabel, chatLastLabel, goodImageView)
         
         chatUserImageView.snp.makeConstraints {
             $0.width.height.equalTo(40)
@@ -70,7 +70,7 @@ class MessageTableViewCell: BaseTableViewCell {
             $0.bottom.equalToSuperview().inset(14)
         }
         
-        chatGoodImageView.snp.makeConstraints {
+        goodImageView.snp.makeConstraints {
             $0.width.height.equalTo(40)
             $0.trailing.equalToSuperview().inset(20)
             $0.centerY.equalToSuperview()

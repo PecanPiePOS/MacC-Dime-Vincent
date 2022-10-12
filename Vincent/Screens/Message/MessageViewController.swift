@@ -20,7 +20,6 @@ final class MessageViewController: BaseViewController {
         $0.dataSource = self
         
         $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        $0.separatorColor = .blue
     }
     
     var channels = [Channel]()
@@ -68,7 +67,7 @@ extension MessageViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let channel = channels[indexPath.row]
-        let viewController = ChatViewController(channel: channel)
+        let viewController = MessageRoomViewController(channel: channel)
         viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
