@@ -50,8 +50,7 @@ class SellSelectView: UIView {
         
         stackView.snp.makeConstraints {
             $0.top.left.equalToSuperview()
-            $0.right.equalToSuperview().inset(20)
-            $0.bottom.equalToSuperview().inset(20)
+            $0.right.bottom.equalToSuperview().inset(20)
         }
         
         selectButtonTitle.snp.makeConstraints {
