@@ -19,7 +19,7 @@ class SellCheckBoxView: UIView {
                 checkBoxImage.tintColor = UIColor.gray
                 checkBoxImage.image = UIImage(systemName: "square", withConfiguration: configImageUI)
             } else {
-                checkBoxImage.tintColor = UIColor.brown
+                checkBoxImage.tintColor = UIColor.yellow
                 checkBoxImage.image = UIImage(systemName: "checkmark.square.fill", withConfiguration: configImageUI)
             }
         }
