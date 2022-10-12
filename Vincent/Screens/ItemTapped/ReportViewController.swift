@@ -80,6 +80,11 @@ class ReportViewControlelr: BaseViewController {
         view.backgroundColor = .black.withAlphaComponent(0.7)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        reportUIView.layer.cornerRadius = reportUIView.frame.width / 12
+    }
+
     private func addActionsAndDelegate() {
         dismissButton.addTarget(self, action: #selector(didPressDismissButton(_:)), for: .touchUpInside)
         submitButton.addTarget(self, action: #selector(didPressSubmitButton(_:)), for: .touchUpInside)
