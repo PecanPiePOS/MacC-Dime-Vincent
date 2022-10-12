@@ -25,6 +25,8 @@ final class MessageViewController: BaseViewController {
     
     var channels = [Channel]()
     
+    // MARK: - func
+    
     override func render() {
         view.addSubview(channelTableView)
         channelTableView.snp.makeConstraints {
