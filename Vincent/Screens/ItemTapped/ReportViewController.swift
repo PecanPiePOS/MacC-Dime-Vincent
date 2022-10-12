@@ -77,7 +77,7 @@ class ReportViewControlelr: BaseViewController {
     }
 
     override func configUI() {
-        view.backgroundColor = UIColor(white: 0.4, alpha: 0.7)
+        view.backgroundColor = .black.withAlphaComponent(0.7)
     }
 
     private func addActionsAndDelegate() {
@@ -91,7 +91,7 @@ class ReportViewControlelr: BaseViewController {
     }
 
     @objc func didPressDismissButton(_ sender: UIButton) {
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
 }
 

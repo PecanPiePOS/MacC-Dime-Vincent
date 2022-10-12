@@ -133,8 +133,9 @@ extension ItemTappedViewController {
 
     @objc func didPressReportButton(_ sender:UIBarButtonItem) {
         let presentedViewController = ReportViewControlelr()
-        presentedViewController.modalPresentationStyle = .fullScreen
-        present(presentedViewController, animated: false)
+        presentedViewController.modalPresentationStyle = .overFullScreen
+        presentedViewController.modalTransitionStyle = .crossDissolve
+        present(presentedViewController, animated: true)
     }
 
     @objc func didPressShareButton(_ sender:UIBarButtonItem) {
