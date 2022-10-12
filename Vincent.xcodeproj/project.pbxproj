@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58161E9328F43DF0001F8461 /* SellCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58161E9228F43DF0001F8461 /* SellCheckBoxView.swift */; };
+		5826B99828F2A51000F60693 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826B99728F2A51000F60693 /* UIFont+Extension.swift */; };
+		5855709828F2AEDF002FB7C9 /* SellTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855709728F2AEDF002FB7C9 /* SellTextFieldView.swift */; };
+		5855709C28F2FC88002FB7C9 /* SellSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855709B28F2FC88002FB7C9 /* SellSelectView.swift */; };
+		58A30EE228F501140017C625 /* SellPhotoAddedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */; };
+		58A30EE428F5014A0017C625 /* SellPhotoTapAddBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */; };
 		A951645828F465D3002CD715 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951645728F465D3002CD715 /* UITextView+Extension.swift */; };
 		7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA02F028F451130006C0B2 /* CategoryViewController.swift */; };
 		A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */; };
@@ -48,6 +54,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58161E9228F43DF0001F8461 /* SellCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCheckBoxView.swift; sourceTree = "<group>"; };
+		5826B99728F2A51000F60693 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		5855709728F2AEDF002FB7C9 /* SellTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellTextFieldView.swift; sourceTree = "<group>"; };
+		5855709B28F2FC88002FB7C9 /* SellSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellSelectView.swift; sourceTree = "<group>"; };
+		58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellPhotoAddedBox.swift; sourceTree = "<group>"; };
+		58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellPhotoTapAddBox.swift; sourceTree = "<group>"; };
 		A951645728F465D3002CD715 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		7BBA02F028F451130006C0B2 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTappedViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				CB81DA5928F1B19E005164FA /* SellViewController.swift */,
+				5855709728F2AEDF002FB7C9 /* SellTextFieldView.swift */,
+				5855709B28F2FC88002FB7C9 /* SellSelectView.swift */,
+				58161E9228F43DF0001F8461 /* SellCheckBoxView.swift */,
+				58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */,
+				58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */,
 			);
 			path = Sell;
 			sourceTree = "<group>";
@@ -244,6 +261,7 @@
 				CBADEE6228EEC26E0010B5AA /* UIView+Extension.swift */,
 				CBADEE6428EEC28A0010B5AA /* UILabel+Extension.swift */,
 				CBADEE6628EEC2E00010B5AA /* Notification+Extension.swift */,
+				5826B99728F2A51000F60693 /* UIFont+Extension.swift */,
 				A951645728F465D3002CD715 /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
@@ -422,11 +440,16 @@
 				CBADEE6528EEC28A0010B5AA /* UILabel+Extension.swift in Sources */,
 				CBADEE6D28EEC3AB0010B5AA /* BaseTableViewCell.swift in Sources */,
 				CBADEE5028EEBF620010B5AA /* Logger.swift in Sources */,
+				5826B99828F2A51000F60693 /* UIFont+Extension.swift in Sources */,
+				5855709828F2AEDF002FB7C9 /* SellTextFieldView.swift in Sources */,
 				CBADEE7628EEC9B80010B5AA /* SearchViewController.swift in Sources */,
+				58A30EE428F5014A0017C625 /* SellPhotoTapAddBox.swift in Sources */,
 				CBADEE5328EEBF950010B5AA /* ImageLiteral.swift in Sources */,
+				58A30EE228F501140017C625 /* SellPhotoAddedBox.swift in Sources */,
 				CBADEE5D28EEC2090010B5AA /* UIColor+Extension.swift in Sources */,
 				CBCBEF9028F2E570009F134F /* Sender.swift in Sources */,
 				CBADEE6928EEC3510010B5AA /* UITableView+Extension.swift in Sources */,
+				58161E9328F43DF0001F8461 /* SellCheckBoxView.swift in Sources */,
 				7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */,
 				CB18F2D928F67D5400742C30 /* GoodInfoView.swift in Sources */,
 				CBADEE6728EEC2E00010B5AA /* Notification+Extension.swift in Sources */,
@@ -441,6 +464,7 @@
 				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
 				CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */,
 				CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */,
+				5855709C28F2FC88002FB7C9 /* SellSelectView.swift in Sources */,
 				CBCBEF7F28F2E3A5009F134F /* Message.swift in Sources */,
 				CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */,
 				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
