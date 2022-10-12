@@ -143,9 +143,7 @@ final class SellViewController: BaseViewController {
     
     override func render() {
         super.render()
-        view.addSubview(closeButton)
-        view.addSubview(headTitleLabel)
-        view.addSubview(completeButton)
+        view.addSubviews(closeButton, headTitleLabel, completeButton)
         
         stackViewPhotoAdd.addArrangedSubview(photoAddBoxView)
         stackViewPhotoAdd.addArrangedSubview(addedPhotoCollectionView)
