@@ -45,8 +45,7 @@ class SellSelectView: UIView {
         stackView.addArrangedSubview(selectButtonTitle)
         stackView.addArrangedSubview(chevronImage)
         
-        self.addSubview(stackView)
-        self.addSubview(dividerView)
+        self.addSubviews(stackView, dividerView)
         
         stackView.snp.makeConstraints {
             $0.top.left.equalToSuperview()
