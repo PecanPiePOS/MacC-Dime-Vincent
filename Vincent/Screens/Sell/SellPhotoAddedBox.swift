@@ -38,8 +38,7 @@ class SellPhotoAddedBox: UICollectionViewCell {
     }
     
     func render() {
-        self.addSubview(addedImage)
-        self.addSubview(deleteImageButton)
+        self.addSubviews(addedImage, deleteImageButton)
         
         addedImage.translatesAutoresizingMaskIntoConstraints = false
         addedImage.snp.makeConstraints {
