@@ -74,10 +74,7 @@ class SellCheckBoxView: UIView {
             $0.left.equalTo(self.checkBoxImage.snp.right).offset(5)
         }
     }
-    
-    func configUI() {
-    }
-
+   
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
