@@ -10,47 +10,60 @@ import UIKit
 import SnapKit
 import Then
 
-class ArtItemCollectionView: BaseViewController {
+class ArtItemCollectionView: UIView {
 
     var artItems: [ArtItem] = []
-
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
-        $0.backgroundColor = .white
-    }
-    
 
     private enum LayoutConstant {
         static let spacing: CGFloat = 16.0
         static let itemHeight: CGFloat = 300.0
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.backgroundColor = .white
+    }
+
+    private let artItemCount = UILabel().then {
+        $0.backgroundColor = .blue
+        $0.font = .systemFont(ofSize: 16, weight: .medium)
+        $0.text = "상품00개"
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupViews()
         setupLayouts()
         populateProfiles()
         collectionView.reloadData()
     }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private func setupViews() {
-        view.backgroundColor = .white
-        view.addSubview(collectionView)
+        self.addSubviews(artItemCount,collectionView)
 
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ArtItemCell.self, forCellWithReuseIdentifier: ArtItemCell.identifier)
+        collectionView.backgroundColor = .blue
     }
 
     private func setupLayouts() {
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        artItemCount.snp.makeConstraints {
+            $0.leading.equalTo(self.snp.leading).offset(20)
+            $0.top.equalTo(self.snp.top).offset(20)
+        }
 
-        // Layout constraints for `collectionView`
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
-        ])
+        collectionView.snp.makeConstraints {
+            $0.leading.equalTo(self.snp.leading)
+            $0.trailing.equalTo(self.snp.trailing)
+            $0.top.equalTo(artItemCount.snp.bottom).offset(20)
+            $0.bottom.equalTo(self.snp.bottom)
+        }
+
+        self.backgroundColor = .red
     }
 
     private func populateProfiles() {
@@ -64,29 +77,21 @@ class ArtItemCollectionView: BaseViewController {
         ]
     }
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
 }
 
 extension ArtItemCollectionView: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(#function)
         return artItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtItemCell.identifier, for: indexPath) as! ArtItemCell
 
         let artItem = artItems[indexPath.row]
         cell.setup(with: artItem)
         cell.contentView.backgroundColor = .red
-        print(#function)
 
         return cell
     }
@@ -95,7 +100,7 @@ extension ArtItemCollectionView: UICollectionViewDataSource {
 extension ArtItemCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = itemWidth(for: view.frame.width, spacing: LayoutConstant.spacing)
+        let width = itemWidth(for: self.frame.width, spacing: LayoutConstant.spacing)
 
         return CGSize(width: width, height: LayoutConstant.itemHeight)
     }
