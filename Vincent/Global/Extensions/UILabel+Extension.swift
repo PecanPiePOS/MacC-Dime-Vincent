@@ -8,16 +8,17 @@
 import UIKit
 
 extension UILabel {
-//    func addLabelSpacing(kernValue: Double = 0.0, lineSpacing: CGFloat = 6.0) {
-//        if let labelText = self.text, labelText.count > 0 {
-//            let paragraphStyle = NSMutableParagraphStyle()
-//            paragraphStyle.lineSpacing = lineSpacing
-//            attributedText = NSAttributedString(string: labelText,
-//                                                attributes: [.kern: kernValue,
-//                                                             .paragraphStyle: paragraphStyle])
-//            lineBreakStrategy = .hangulWordPriority
-//        }
-//    }
+    @available(iOS 14.0, *)
+    func addLabelSpacing(kernValue: Double = 0.0, lineSpacing: CGFloat = 6.0) {
+        if let labelText = self.text, labelText.count > 0 {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = lineSpacing
+            attributedText = NSAttributedString(string: labelText,
+                                                attributes: [.kern: kernValue,
+                                                             .paragraphStyle: paragraphStyle])
+            lineBreakStrategy = .hangulWordPriority
+        }
+    }
     
     func setTyping(text: String, characterDelay: TimeInterval = 5.0) {
         self.text = ""
