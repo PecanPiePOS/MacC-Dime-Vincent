@@ -8,9 +8,18 @@
 import Foundation
 
 func getChannelMocks() -> [Channel] {
-    return (0...3).map { Channel(id: String($0), name: "채팅방 " + String($0)) }
+    return [
+        Channel(id: String(0), userName: "심규보", chatDate: "3시간 전", chatLast: "김프로 밥먹었어?"),
+        Channel(id: String(1), userName: "김태환", chatDate: "9시간 전", chatLast: "놀자"),
+        Channel(id: String(2), userName: "장지수", chatDate: "2일 전", chatLast: "빵"),
+        Channel(id: String(2), userName: "김연호", chatDate: "3주 전", chatLast: "흐헹")
+    ]
 }
 
 func getMessagesMock() -> [Message] {
-    return (0...3).map { Message(content: "message content \($0)") }
+    return [
+        Message(content: "안뇽"),
+        Message(content: "물건"),
+        Message(content: "내놔")
+    ]
 }

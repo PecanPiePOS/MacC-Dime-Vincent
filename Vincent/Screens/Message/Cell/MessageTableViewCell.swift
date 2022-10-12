@@ -6,46 +6,78 @@
 //
 
 import UIKit
-import SnapKit
 
-class MessageTableViewCell: UITableViewCell {
-    lazy var chatRoomLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .mainBlack
-        return label
-    }()
+import SnapKit
+import Then
+
+class MessageTableViewCell: BaseTableViewCell {
     
-    lazy var detailButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.isUserInteractionEnabled = false
-        return button
-    }()
+    // MARK: - property
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        configure()
+    lazy var chatUserImageView = UIImageView().then {
+        let url = URL(string: "https://picsum.photos/600/600/?random")
+        $0.load(url: url!)
+        $0.layer.cornerRadius = 20
+        $0.layer.masksToBounds = true
     }
     
-    required init?(coder: NSCoder) {
-        fatalError()
+    lazy var chatUserNameLabel = UILabel().then {
+        $0.textColor = .mainBlack
+        $0.font = UIFont.systemFont(ofSize: 15)
+        $0.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     }
     
-    private func configure() {
-        contentView.addSubview(chatRoomLabel)
-        contentView.addSubview(detailButton)
+    lazy var chatDateLabel = UILabel().then {
+        $0.textColor = UIColor(hex: "#999999")
+        $0.font = UIFont.systemFont(ofSize: 11)
+    }
+    
+    lazy var chatLastLabel = UILabel().then {
+        $0.textColor = .mainBlack
+        $0.font = UIFont.systemFont(ofSize: 11)
+    }
+    
+    lazy var chatGoodImageView = UIImageView().then {
+        let url = URL(string: "https://picsum.photos/600/600/?random")
+        $0.load(url: url!)
+        $0.layer.cornerRadius = 5
+        $0.layer.masksToBounds = true
+    }
+    
+    // MARK: - func
+    
+    override func render() {
+        contentView.addSubviews(chatUserImageView, chatUserNameLabel, chatDateLabel, chatLastLabel, chatGoodImageView)
         
-        chatRoomLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(24)
-            make.centerY.equalToSuperview()
-            make.trailing.lessThanOrEqualTo(detailButton).offset(-24)
+        chatUserImageView.snp.makeConstraints {
+            $0.width.height.equalTo(40)
+            $0.leading.equalToSuperview().inset(20)
+            $0.centerY.equalToSuperview()
         }
         
-        detailButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        detailButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-24)
+        chatUserNameLabel.snp.makeConstraints {
+            $0.leading.equalTo(chatUserImageView.snp.trailing).offset(20)
+            $0.top.equalToSuperview().inset(14)
         }
+        
+        chatDateLabel.snp.makeConstraints {
+            $0.leading.equalTo(chatUserNameLabel.snp.trailing).offset(10)
+            $0.top.equalToSuperview().inset(18)
+        }
+        
+        chatLastLabel.snp.makeConstraints {
+            $0.leading.equalTo(chatUserImageView.snp.trailing).offset(20)
+            $0.bottom.equalToSuperview().inset(14)
+        }
+        
+        chatGoodImageView.snp.makeConstraints {
+            $0.width.height.equalTo(40)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.centerY.equalToSuperview()
+        }
+    }
+    
+    override func configUI() {
+        // Override ConfigUI
     }
 }

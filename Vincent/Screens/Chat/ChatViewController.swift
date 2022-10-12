@@ -95,7 +95,7 @@ class ChatViewController: MessagesViewController {
     }
     
     private func configure() {
-        title = channel.name
+        title = channel.userName
         navigationController?.navigationBar.prefersLargeTitles = false
         messages = getMessagesMock()
     }

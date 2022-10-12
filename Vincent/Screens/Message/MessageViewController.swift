@@ -10,22 +10,25 @@ import UIKit
 import SnapKit
 import Then
 
-class MessageViewController: BaseViewController {
-    lazy var channelTableView: UITableView = {
-        let view = UITableView()
-        view.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.className)
-        view.delegate = self
-        view.dataSource = self
+final class MessageViewController: BaseViewController {
+    
+    // MARK: - property
+    
+    lazy var channelTableView = UITableView().then {
+        $0.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.className)
+        $0.delegate = self
+        $0.dataSource = self
         
-        return view
-    }()
+        $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        $0.separatorColor = .blue
+    }
     
     var channels = [Channel]()
     
     override func render() {
         view.addSubview(channelTableView)
-        channelTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        channelTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
         channels = getChannelMocks()
@@ -49,12 +52,16 @@ extension MessageViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.className, for: indexPath) as! MessageTableViewCell
-        cell.chatRoomLabel.text = channels[indexPath.row].name
+        
+        cell.selectionStyle = . none
+        cell.chatUserNameLabel.text = channels[indexPath.row].userName
+        cell.chatDateLabel.text = channels[indexPath.row].chatDate
+        cell.chatLastLabel.text = channels[indexPath.row].chatLast
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
