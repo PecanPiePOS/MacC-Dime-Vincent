@@ -10,6 +10,24 @@ import Then
 
 class ItemTappedViewController: BaseViewController {
 
+    private let reportEarImage = UIImage(systemName: "ear.trianglebadge.exclamationmark")!
+
+    private let shareImage  = UIImage(systemName: "square.and.arrow.up")!
+
+    lazy private var reportButton = UIButton(frame: CGRect(x: 0, y: 0, width: reportEarImage.size.width, height: reportEarImage.size.height)).then {
+        $0.tintColor = .black
+        $0.setImage(reportEarImage, for: .normal)
+    }
+
+    lazy private var shareButton = UIButton(frame: CGRect(x: 0, y: 0, width: shareImage.size.width, height: shareImage.size.height)).then {
+        $0.tintColor = .black
+        $0.setImage(shareImage, for: .normal)
+    }
+
+    lazy private var reportNavigationBarItem = UIBarButtonItem(customView: reportButton)
+
+    lazy private var shaareNavigationBarItem = UIBarButtonItem(customView: shareButton)
+
     private let testLabel = UILabel().then {
         $0.text = "Image would be here"
     }
@@ -35,7 +53,6 @@ class ItemTappedViewController: BaseViewController {
         $0.layer.cornerRadius = 15
     }
 
-
     // TODO: dynamic size로 변경 필요
     lazy private var scrollView = UIScrollView(frame: .zero).then {
         var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
@@ -54,6 +71,7 @@ class ItemTappedViewController: BaseViewController {
         render()
         configUI()
         setFunctionAndDelegate()
+        navigationItem.rightBarButtonItems = [shaareNavigationBarItem, reportNavigationBarItem]
     }
 
     // layout
@@ -94,6 +112,8 @@ class ItemTappedViewController: BaseViewController {
     private func setFunctionAndDelegate() {
         likeButton.addTarget(self, action: #selector(didPressLikeButton(_:)), for: .touchUpInside)
         buyButton.addTarget(self, action: #selector(didPressBuyButton(_:)), for: .touchUpInside)
+        reportButton.addTarget(self, action: #selector(didPressReportButton(_:)), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(didPressShareButton(_:)), for: .touchUpInside)
     }
 }
 
@@ -109,6 +129,16 @@ extension ItemTappedViewController {
 
     @objc func didPressBuyButton(_ sender: UIButton) {
         print("should navigate to ChatView")
+    }
+
+    @objc func didPressReportButton(_ sender:UIBarButtonItem) {
+        let presentedViewController = ReportViewControlelr()
+        presentedViewController.modalPresentationStyle = .fullScreen
+        present(presentedViewController, animated: false)
+    }
+
+    @objc func didPressShareButton(_ sender:UIBarButtonItem) {
+        print("share")
     }
 }
 
