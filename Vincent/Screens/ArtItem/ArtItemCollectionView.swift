@@ -23,12 +23,6 @@ class ArtItemCollectionView: UIView {
         $0.backgroundColor = .white
     }
 
-    private let artItemCount = UILabel().then {
-        $0.backgroundColor = .blue
-        $0.font = .systemFont(ofSize: 16, weight: .medium)
-        $0.text = "상품00개"
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -42,7 +36,7 @@ class ArtItemCollectionView: UIView {
     }
 
     private func setupViews() {
-        self.addSubviews(artItemCount,collectionView)
+        self.addSubview(collectionView)
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -51,15 +45,11 @@ class ArtItemCollectionView: UIView {
     }
 
     private func setupLayouts() {
-        artItemCount.snp.makeConstraints {
-            $0.leading.equalTo(self.snp.leading).offset(20)
-            $0.top.equalTo(self.snp.top).offset(20)
-        }
 
         collectionView.snp.makeConstraints {
             $0.leading.equalTo(self.snp.leading)
             $0.trailing.equalTo(self.snp.trailing)
-            $0.top.equalTo(artItemCount.snp.bottom).offset(20)
+            $0.top.equalTo(self.snp.top).offset(20)
             $0.bottom.equalTo(self.snp.bottom)
         }
 
@@ -87,7 +77,7 @@ extension ArtItemCollectionView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtItemCell.identifier, for: indexPath) as! ArtItemCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtItemCell.identifier, for: indexPath) as? ArtItemCell else { return UICollectionViewCell() }
 
         let artItem = artItems[indexPath.row]
         cell.setup(with: artItem)

@@ -28,6 +28,12 @@ class ArtItemViewController: BaseViewController {
         $0.placeholder = "윈저앤뉴튼, 홀베인, 클레이트 등"
     }
 
+    private let artItemCount = UILabel().then {
+        $0.backgroundColor = .black
+        $0.font = .systemFont(ofSize: 16, weight: .medium)
+        $0.text = "상품00개"
+    }
+
     private let artItemCategoryListView = ArtItemCategoryView()
 
     private let artItemCollectionView = ArtItemCollectionView()
@@ -41,7 +47,7 @@ class ArtItemViewController: BaseViewController {
     private func setupViews() {
         view.backgroundColor = .white
 
-        view.addSubviews(searchView, magniImage, searchTextField)
+        view.addSubviews(searchView, magniImage, searchTextField, artItemCount)
         view.addSubview(artItemCategoryListView)
         view.addSubview(artItemCollectionView)
     }
@@ -65,6 +71,10 @@ class ArtItemViewController: BaseViewController {
             $0.trailing.equalTo(searchView.snp.trailing)
             $0.top.equalTo(searchView.snp.top).offset(7)
             $0.bottom.equalTo(searchView.snp.bottom).inset(7)
+        }
+        artItemCount.snp.makeConstraints {
+            $0.leading.equalTo(view.snp.leading).offset(20)
+            $0.top.equalTo(artItemCategoryListView.snp.bottom).offset(30)
         }
 
         artItemCategoryListView.snp.makeConstraints {
