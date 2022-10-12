@@ -158,11 +158,7 @@ final class SellViewController: BaseViewController {
         stackViewTextView.addArrangedSubview(itemDetailSectionTitle)
         stackViewTextView.addArrangedSubview(itemDetailTextView)
         
-        view.addSubview(stackViewPhotoAdd)
-        view.addSubview(stackViewTextField)
-        view.addSubview(stackViewSelect)
-        view.addSubview(stackViewCheck)
-        view.addSubview(stackViewTextView)
+        view.addSubviews(stackViewPhotoAdd, stackViewTextField, stackViewSelect, stackViewCheck, stackViewTextView)
         
         closeButton.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
