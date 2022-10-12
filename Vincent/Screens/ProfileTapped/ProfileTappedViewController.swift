@@ -4,11 +4,11 @@
 //
 //  Created by Jisu Jang on 2022/10/11.
 //
-import Then
 import SnapKit
 import UIKit
+import Then
 
-class ProfileTappedViewController: BaseViewController {
+final class ProfileTappedViewController: BaseViewController {
     private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
     private let userProfileCell = UIView(frame: .zero)
     private let userNickName = UILabel().then {
@@ -24,7 +24,7 @@ class ProfileTappedViewController: BaseViewController {
         $0.isScrollEnabled = false
         $0.rowHeight = 70
         $0.showsVerticalScrollIndicator = false
-        $0.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        $0.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.className)
         $0.tableFooterView = UIView(frame: .zero)
     }
 
@@ -39,7 +39,6 @@ class ProfileTappedViewController: BaseViewController {
         super.viewDidLoad()
         render()
         setFunctionsAndDelegate()
-        configUI()
     }
 
     override func render() {
@@ -48,10 +47,8 @@ class ProfileTappedViewController: BaseViewController {
             $0.edges.equalToSuperview()
         }
         profileTableView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(20)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 
@@ -59,16 +56,12 @@ class ProfileTappedViewController: BaseViewController {
         profileTableView.delegate = self
         profileTableView.dataSource = self
     }
-
-    override func configUI() {
-        super.configUI()
-    }
 }
 
 extension ProfileTappedViewController: UITableViewDataSource {
     //cell control
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.className, for: indexPath) as! ProfileTableViewCell
         cell.backgroundColor = .clear
 
         switch ProfileSection(rawValue: indexPath.section) {

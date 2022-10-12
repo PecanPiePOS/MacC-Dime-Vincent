@@ -8,8 +8,7 @@ import SnapKit
 import UIKit
 import Then
 
-class ProfileTableViewCell: UITableViewCell {
-    static let identifier = "ProfileTableViewCell"
+final class ProfileTableViewCell: UITableViewCell {
 
     private let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
 
@@ -36,15 +35,16 @@ class ProfileTableViewCell: UITableViewCell {
     }
 
     lazy private var chevronImage = UIImageView().then {
-        $0.image = UIImage(systemName: "chevron.forward", withConfiguration: symbolConfiguration)
+        $0.image = ImageLiteral.btnFoward
         $0.tintColor = .white
+        $0.contentMode = .scaleAspectFit
     }
 
     var cellSpacing: CGFloat = 0
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addsubview()
+        render()
 
     }
 
@@ -52,7 +52,7 @@ class ProfileTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addsubview() {
+    private func render() {
         contentView.addSubviews(userProfileImage, userNickName, userID, cellTextLabel,chevronImage)
         if isUserProfileCell {
             contentView.addSubviews(userProfileImage, userNickName, userID,chevronImage)
@@ -70,8 +70,7 @@ class ProfileTableViewCell: UITableViewCell {
         chevronImage.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(30)
             $0.centerY.equalToSuperview()
-            $0.width.equalTo(20)
-            $0.height.equalTo(20)
+            $0.width.height.equalTo(20)
         }
 
         //layout
@@ -79,8 +78,7 @@ class ProfileTableViewCell: UITableViewCell {
             userProfileImage.snp.makeConstraints {
                 $0.centerY.equalToSuperview()
                 $0.leading.equalToSuperview().inset(20)
-                $0.width.equalTo(40)
-                $0.height.equalTo(40)
+                $0.width.height.equalTo(40)
             }
 
             userNickName.snp.makeConstraints {
