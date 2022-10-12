@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class SellPhotoTapAddBox: UIView {
+final class SellPhotoTapAddBox: UIView {
     
     private let cameraImage = UIImageView().then {
         $0.contentMode = .scaleAspectFit
