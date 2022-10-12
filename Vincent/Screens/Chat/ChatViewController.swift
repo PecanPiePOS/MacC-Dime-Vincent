@@ -7,28 +7,25 @@
 
 import UIKit
 
-import MessageKit
 import InputBarAccessoryView
+import MessageKit
 import Photos
+import SnapKit
+import Then
 
-class ChatViewController: MessagesViewController {
+final class ChatViewController: MessagesViewController {
     
-    private lazy var backButton: UIButton = {
-        let button = BackButton()
-        let buttonAction = UIAction { _ in
-            self.navigationController?.popViewController(animated: true)
-        }
-        button.addAction(buttonAction, for: .touchUpInside)
-        return button
-    }()
+    // MARK: - property
     
-    lazy var cameraBarButtonItem: InputBarButtonItem = {
-        let button = InputBarButtonItem(type: .system)
-        button.tintColor = .mainBlack
-        button.image = ImageLiteral.btnCamera
-        button.addTarget(self, action: #selector(didTapCameraButton), for: .touchUpInside)
-        return button
-    }()
+    private lazy var backButton = BackButton().then {
+        $0.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+    }
+    
+    lazy var cameraBarButtonItem = InputBarButtonItem().then {
+        $0.tintColor = .mainBlack
+        $0.image = ImageLiteral.btnCamera
+        $0.addTarget(self, action: #selector(didTapCameraButton), for: .touchUpInside)
+    }
     
     let channel: Channel
     var sender = Sender(senderId: "sender123", displayName: "코비코비")
@@ -67,6 +64,8 @@ class ChatViewController: MessagesViewController {
     deinit {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    // MARK: - func
     
     func makeBarButtonItem<T: UIView>(with view: T) -> UIBarButtonItem {
         return UIBarButtonItem(customView: view)
@@ -135,6 +134,10 @@ class ChatViewController: MessagesViewController {
         if shouldScrollToBottom {
           messagesCollectionView.scrollToLastItem(animated: true)
         }
+    }
+    
+    @objc private func didTapBackButton() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func didTapCameraButton() {

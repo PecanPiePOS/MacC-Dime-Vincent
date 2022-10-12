@@ -34,7 +34,7 @@ class MessageTableViewCell: BaseTableViewCell {
     
     lazy var chatLastLabel = UILabel().then {
         $0.textColor = .mainBlack
-        $0.font = UIFont.systemFont(ofSize: 11)
+        $0.font = UIFont.systemFont(ofSize: 13)
     }
     
     lazy var chatGoodImageView = UIImageView().then {
@@ -75,9 +75,5 @@ class MessageTableViewCell: BaseTableViewCell {
             $0.trailing.equalToSuperview().inset(20)
             $0.centerY.equalToSuperview()
         }
-    }
-    
-    override func configUI() {
-        // Override ConfigUI
     }
 }
