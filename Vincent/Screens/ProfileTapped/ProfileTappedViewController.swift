@@ -8,19 +8,12 @@ import SnapKit
 import UIKit
 import Then
 
+// TODO: 텍스트 동적 사이즈 적용
 final class ProfileTappedViewController: BaseViewController {
 
     private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
 
     private let userProfileCell = UIView(frame: .zero)
-
-    private let userNickName = UILabel().then {
-        $0.text = "다임다임"
-    }
-
-    private let userID = UILabel().then {
-        $0.text = "@zdshld2134"
-    }
 
     private let profileTableView = UITableView().then {
         $0.separatorColor = .clear
