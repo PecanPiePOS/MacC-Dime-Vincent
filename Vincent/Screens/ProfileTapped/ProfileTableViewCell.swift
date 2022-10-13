@@ -21,7 +21,10 @@ final class ProfileTableViewCell: UITableViewCell {
     }
     //MyProfile
     private let userProfileImage = UIImageView().then {
-        $0.image = UIImage(systemName: "drop")
+        $0.image = UIImage(named: "Hardy")
+        $0.layer.cornerRadius = 20
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
     }
     private let userNickName = UILabel().then {
         $0.textColor = .white
@@ -80,6 +83,8 @@ final class ProfileTableViewCell: UITableViewCell {
                 $0.leading.equalToSuperview().inset(20)
                 $0.width.height.equalTo(40)
             }
+            userProfileImage.layer.cornerRadius = 20
+            
 
             userNickName.snp.makeConstraints {
                 $0.top.equalTo(userProfileImage)
