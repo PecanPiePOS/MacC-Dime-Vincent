@@ -23,8 +23,8 @@ class ArtItemViewController: BaseViewController {
     }
 
     private let searchTextField = UITextField().then {
+        $0.font = UIFont.preferredFont(forTextStyle: .caption1, weight: .regular)
         $0.textColor = .systemGray5
-        $0.font = .systemFont(ofSize: 12, weight: .regular)
         $0.backgroundColor = .red
         $0.placeholder = "윈저앤뉴튼, 홀베인, 클레이트 등"
     }
