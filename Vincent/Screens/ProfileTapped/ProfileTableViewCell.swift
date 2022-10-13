@@ -8,7 +8,6 @@ import SnapKit
 import UIKit
 import Then
 
-// TODO: 텍스트 동적 사이즈 적용
 final class ProfileTableViewCell: UITableViewCell {
 
     private let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)

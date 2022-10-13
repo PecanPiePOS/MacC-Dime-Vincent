@@ -8,7 +8,6 @@ import SnapKit
 import UIKit
 import Then
 
-// TODO: 텍스트 동적 사이즈 적용
 final class ProfileTappedViewController: BaseViewController {
 
     private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
