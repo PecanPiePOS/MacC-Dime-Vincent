@@ -15,10 +15,10 @@ enum ImageLiteral {
     static var btnEnroll: UIImage { .load(systemName: "plus.circle.fill") }
     static var btnProfile: UIImage { .load(systemName: "person.crop.circle") }
     static var btnBack: UIImage { .load(systemName: "chevron.backward") }
-    
+
+    static var btnFoward: UIImage { .load(systemName: "chevron.forward") }
     static var btnCamera: UIImage { .load(systemName: "camera") }
     static var btnSend: UIImage { .load(systemName: "paperplane") }
-    
 }
 
 extension UIImage {
