@@ -4,11 +4,12 @@
 //
 //  Created by Jisu Jang on 2022/10/12.
 //
+
 import SnapKit
 import UIKit
 import Then
 
-class ReportViewControlelr: BaseViewController {
+class ReportViewController: BaseViewController {
 
     private let reportUIView = UIView().then {
         $0.layer.cornerRadius = 15
@@ -25,9 +26,12 @@ class ReportViewControlelr: BaseViewController {
         $0.textColor = .systemGray2
     }
 
-    private let submitButton = UIButton(configuration: .filled()).then {
-        $0.tintColor = .mainYellow
+    private let submitButton = UIButton().then {
+        $0.backgroundColor = .mainYellow
         $0.setTitle("제출하기", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.tintColor = .white
+        $0.layer.cornerRadius = 10
     }
 
     private let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title3)
@@ -73,6 +77,7 @@ class ReportViewControlelr: BaseViewController {
         submitButton.snp.makeConstraints {
             $0.top.equalTo(reportTextView.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
         }
     }
 
@@ -100,7 +105,7 @@ class ReportViewControlelr: BaseViewController {
     }
 }
 
-extension ReportViewControlelr: UITextViewDelegate {
+extension ReportViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         reportTextView.text = ""
         reportTextView.textColor = .black
@@ -117,3 +122,4 @@ extension ReportViewControlelr: UITextViewDelegate {
         true
     }
 }
+

@@ -10,7 +10,6 @@ import Then
 
 class ItemTappedViewController: BaseViewController {
 
-
     private let reportEarImage = UIImage(systemName: "ear.trianglebadge.exclamationmark")!
 
     private let shareImage  = UIImage(systemName: "square.and.arrow.up")!
@@ -31,13 +30,14 @@ class ItemTappedViewController: BaseViewController {
 
     private let testLabel = UILabel().then {
         $0.text = "Image would be here"
+    }
 
     // TODO: dynamic size로 변경 필요
     lazy private var baseScrollView = UIScrollView(frame: .zero).then {
-//        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
+        //        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
         $0.backgroundColor = .white
         $0.frame = view.bounds
-//        $0.contentSize = scrollContentViewSize
+        //        $0.contentSize = scrollContentViewSize
     }
 
     lazy private var baseScrollContentView = UIView(frame: .zero).then {
@@ -87,6 +87,7 @@ class ItemTappedViewController: BaseViewController {
         $0.backgroundColor = .systemBlue
         $0.frame = view.bounds
         $0.contentSize = scrollContentViewSize
+    }
 
     private let titleTextView = UITextView().then {
         $0.text = "루키의 물건들 가격 제안 가능!! 10000만원 이상 부터 "
@@ -309,7 +310,6 @@ class ItemTappedViewController: BaseViewController {
 
     private func selectedPage(_ currentPage: Int) {
         pageControl.currentPage = currentPage
-
     }
 }
 
@@ -330,7 +330,7 @@ extension ItemTappedViewController {
 
 
     @objc func didPressReportButton(_ sender:UIBarButtonItem) {
-        let presentedViewController = ReportViewControlelr()
+        let presentedViewController = ReportViewController()
         presentedViewController.modalPresentationStyle = .overFullScreen
         presentedViewController.modalTransitionStyle = .crossDissolve
         present(presentedViewController, animated: true)
@@ -338,6 +338,7 @@ extension ItemTappedViewController {
 
     @objc func didPressShareButton(_ sender:UIBarButtonItem) {
         print("share")
+    }
 
     @objc func pageControlDidChange(_ sender: UIPageControl) {
         let current = sender.currentPage
