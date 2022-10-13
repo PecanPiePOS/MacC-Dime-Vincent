@@ -7,6 +7,7 @@
 
 import UIKit
 
+    // TODO: 프로퍼티 띄어쓰기 / 델리게이트 extension 으로 빼기
 final class HomeViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     static let categoryHeaderID = "카테고리"
     static let recentItemsID = "최근 상품"
@@ -25,12 +26,14 @@ final class HomeViewController: BaseViewController, UICollectionViewDelegate, UI
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 40)
     }
+    // TODO: TapGesture 로 네비게이션 넣기
     private let profileImage = UIImageView().then {
-        $0.image = UIImage(named: "kakao")
+        $0.image = UIImage(named: "Hardy")
         $0.layer.cornerRadius = 25
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
     }
+    // TODO: 
     private let searchBar = UIView().then {
         $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 10
@@ -135,6 +138,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
+    // TODO: CategoryViewController 로 넘어가기
 class Header: UICollectionReusableView {
     //Header 클래스는 각 세션에서 헤더를 장식하는 역할을 합니다. 현재 하나만 존재하며 두 세션 모두 사용되기에 다른 클래스가 필요하다고 생각되며 분리도 가능하다고 생각합니다.
     let label = UILabel()

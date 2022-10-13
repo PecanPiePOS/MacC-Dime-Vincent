@@ -8,6 +8,7 @@ import SnapKit
 import UIKit
 import Then
 
+    // TODO: ScrollView 동적인 Height로 만들기 / private lazy var 로 바꾸기
 class ItemTappedViewController: BaseViewController {
 
     private let reportEarImage = UIImage(systemName: "ear.trianglebadge.exclamationmark")!
@@ -359,6 +360,7 @@ extension ItemTappedViewController: UIScrollViewDelegate {
     }
 }
 
+    // TODO: seller 따로 하나로 합치기
 // 예상 모델
 struct ItemInformation: Identifiable {
     let id: String

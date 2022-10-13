@@ -19,6 +19,7 @@ class TabbarViewController: UITabBarController {
         mainViewController.tabBarItem.image = ImageLiteral.btnHome
         mainViewController.tabBarItem.title = "홈"
         
+        // TODO: Modally Present
         sellViewController.tabBarItem.image = ImageLiteral.btnEnroll
         sellViewController.tabBarItem.title = "등록"
         
@@ -41,7 +42,7 @@ extension TabbarViewController: UITabBarControllerDelegate {
 //        if viewController == sellViewController {
 //            print("dfdf")
 //            viewController.modalPresentationStyle = .overFullScreen
-//            viewController.present(testsellviewViewController(), animated: true)
+//            viewController.present(sellViewController, animated: true)
 //        }
 //    }
     
