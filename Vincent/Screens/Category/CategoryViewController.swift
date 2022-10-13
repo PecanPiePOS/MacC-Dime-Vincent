@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
+    // TODO: 프로퍼티 띄어쓰기 / CollectionView 로 바꾸기
 final class CategoryViewController: BaseViewController {
 
     // MARK: - property

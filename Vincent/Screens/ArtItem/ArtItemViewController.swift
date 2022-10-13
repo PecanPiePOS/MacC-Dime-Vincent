@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
+    // TODO:
 class ArtItemViewController: BaseViewController {
 
     private let searchView = UIView().then {
