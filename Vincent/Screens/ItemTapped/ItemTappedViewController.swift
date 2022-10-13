@@ -10,6 +10,28 @@ import Then
 
 class ItemTappedViewController: BaseViewController {
 
+
+    private let reportEarImage = UIImage(systemName: "ear.trianglebadge.exclamationmark")!
+
+    private let shareImage  = UIImage(systemName: "square.and.arrow.up")!
+
+    lazy private var reportButton = UIButton(frame: CGRect(x: 0, y: 0, width: reportEarImage.size.width, height: reportEarImage.size.height)).then {
+        $0.tintColor = .black
+        $0.setImage(reportEarImage, for: .normal)
+    }
+
+    lazy private var shareButton = UIButton(frame: CGRect(x: 0, y: 0, width: shareImage.size.width, height: shareImage.size.height)).then {
+        $0.tintColor = .black
+        $0.setImage(shareImage, for: .normal)
+    }
+
+    lazy private var reportNavigationBarItem = UIBarButtonItem(customView: reportButton)
+
+    lazy private var shaareNavigationBarItem = UIBarButtonItem(customView: shareButton)
+
+    private let testLabel = UILabel().then {
+        $0.text = "Image would be here"
+
     // TODO: dynamic size로 변경 필요
     lazy private var baseScrollView = UIScrollView(frame: .zero).then {
 //        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
@@ -58,6 +80,14 @@ class ItemTappedViewController: BaseViewController {
         $0.layer.cornerRadius = 15
     }
 
+
+    // TODO: dynamic size로 변경 필요
+    lazy private var scrollView = UIScrollView(frame: .zero).then {
+        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
+        $0.backgroundColor = .systemBlue
+        $0.frame = view.bounds
+        $0.contentSize = scrollContentViewSize
+
     private let titleTextView = UITextView().then {
         $0.text = "루키의 물건들 가격 제안 가능!! 10000만원 이상 부터 "
         $0.isScrollEnabled = false
@@ -89,6 +119,7 @@ class ItemTappedViewController: BaseViewController {
 
     private let sellerInformationCell = UIView().then {
         $0.isUserInteractionEnabled = true
+
     }
 
     private let sellerNickName = UILabel().then {
@@ -118,6 +149,7 @@ class ItemTappedViewController: BaseViewController {
         render()
         configUI()
         setFunctionAndDelegate()
+        navigationItem.rightBarButtonItems = [shaareNavigationBarItem, reportNavigationBarItem]
     }
 
     // layout
@@ -249,6 +281,10 @@ class ItemTappedViewController: BaseViewController {
         //addTarget
         likeButton.addTarget(self, action: #selector(didPressLikeButton(_:)), for: .touchUpInside)
         buyButton.addTarget(self, action: #selector(didPressBuyButton(_:)), for: .touchUpInside)
+
+        reportButton.addTarget(self, action: #selector(didPressReportButton(_:)), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(didPressShareButton(_:)), for: .touchUpInside)
+
         pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
 
         //set delegate
@@ -273,6 +309,7 @@ class ItemTappedViewController: BaseViewController {
 
     private func selectedPage(_ currentPage: Int) {
         pageControl.currentPage = currentPage
+
     }
 }
 
@@ -291,6 +328,17 @@ extension ItemTappedViewController {
         print("should navigate to ChatView")
     }
 
+
+    @objc func didPressReportButton(_ sender:UIBarButtonItem) {
+        let presentedViewController = ReportViewControlelr()
+        presentedViewController.modalPresentationStyle = .overFullScreen
+        presentedViewController.modalTransitionStyle = .crossDissolve
+        present(presentedViewController, animated: true)
+    }
+
+    @objc func didPressShareButton(_ sender:UIBarButtonItem) {
+        print("share")
+
     @objc func pageControlDidChange(_ sender: UIPageControl) {
         let current = sender.currentPage
         imageScrollView.setContentOffset(CGPoint(x: CGFloat(current) * view.frame.size.width, y: 0), animated: true)
@@ -298,6 +346,7 @@ extension ItemTappedViewController {
 
     @objc func didTapSellerInformationCell(_ sender: UITapGestureRecognizer) {
         print("should navigate to SellerView")
+
     }
 }
 
