@@ -8,12 +8,12 @@ import SnapKit
 import UIKit
 import Then
 
-    // TODO: ScrollView 동적인 Height로 만들기 
+    // TODO: ScrollView 동적인 Height로 만들기
 class ItemTappedViewController: BaseViewController {
 
-    private let reportEarImage = UIImage(systemName: "ear.trianglebadge.exclamationmark")!
+    private let reportEarImage = ImageLiteral.reportEarImage
 
-    private let shareImage  = UIImage(systemName: "square.and.arrow.up")!
+    private let shareImage  = ImageLiteral.shareImage
 
     private lazy var reportButton = UIButton(frame: CGRect(x: 0, y: 0, width: reportEarImage.size.width, height: reportEarImage.size.height)).then {
         $0.tintColor = .black
@@ -29,16 +29,10 @@ class ItemTappedViewController: BaseViewController {
 
     private lazy var shaareNavigationBarItem = UIBarButtonItem(customView: shareButton)
 
-    private let testLabel = UILabel().then {
-        $0.text = "Image would be here"
-    }
-
     // TODO: dynamic size로 변경 필요
     private lazy var baseScrollView = UIScrollView(frame: .zero).then {
-        //        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
         $0.backgroundColor = .white
         $0.frame = view.bounds
-        //        $0.contentSize = scrollContentViewSize
     }
 
     private lazy var baseScrollContentView = UIView(frame: .zero).then {
@@ -142,7 +136,8 @@ class ItemTappedViewController: BaseViewController {
     }
 
     private let backButtonImage = UIImageView().then {
-        $0.image = UIImage(systemName: "chevron.right")
+        $0.image = ImageLiteral.btnForward
+        $0.contentMode = .scaleAspectFit
         $0.tintColor = .systemGray2
     }
 

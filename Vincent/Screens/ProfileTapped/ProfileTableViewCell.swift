@@ -35,7 +35,7 @@ final class ProfileTableViewCell: UITableViewCell {
     }
 
     private lazy var chevronImage = UIImageView().then {
-        $0.image = ImageLiteral.btnFoward
+        $0.image = ImageLiteral.btnForward
         $0.tintColor = .white
         $0.contentMode = .scaleAspectFit
     }
