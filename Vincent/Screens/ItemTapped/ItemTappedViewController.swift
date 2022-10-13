@@ -8,40 +8,40 @@ import SnapKit
 import UIKit
 import Then
 
-    // TODO: ScrollView 동적인 Height로 만들기 / private lazy var 로 바꾸기
+    // TODO: ScrollView 동적인 Height로 만들기 
 class ItemTappedViewController: BaseViewController {
 
     private let reportEarImage = UIImage(systemName: "ear.trianglebadge.exclamationmark")!
 
     private let shareImage  = UIImage(systemName: "square.and.arrow.up")!
 
-    lazy private var reportButton = UIButton(frame: CGRect(x: 0, y: 0, width: reportEarImage.size.width, height: reportEarImage.size.height)).then {
+    private lazy var reportButton = UIButton(frame: CGRect(x: 0, y: 0, width: reportEarImage.size.width, height: reportEarImage.size.height)).then {
         $0.tintColor = .black
         $0.setImage(reportEarImage, for: .normal)
     }
 
-    lazy private var shareButton = UIButton(frame: CGRect(x: 0, y: 0, width: shareImage.size.width, height: shareImage.size.height)).then {
+    private lazy var shareButton = UIButton(frame: CGRect(x: 0, y: 0, width: shareImage.size.width, height: shareImage.size.height)).then {
         $0.tintColor = .black
         $0.setImage(shareImage, for: .normal)
     }
 
-    lazy private var reportNavigationBarItem = UIBarButtonItem(customView: reportButton)
+    private lazy var reportNavigationBarItem = UIBarButtonItem(customView: reportButton)
 
-    lazy private var shaareNavigationBarItem = UIBarButtonItem(customView: shareButton)
+    private lazy var shaareNavigationBarItem = UIBarButtonItem(customView: shareButton)
 
     private let testLabel = UILabel().then {
         $0.text = "Image would be here"
     }
 
     // TODO: dynamic size로 변경 필요
-    lazy private var baseScrollView = UIScrollView(frame: .zero).then {
+    private lazy var baseScrollView = UIScrollView(frame: .zero).then {
         //        var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height)
         $0.backgroundColor = .white
         $0.frame = view.bounds
         //        $0.contentSize = scrollContentViewSize
     }
 
-    lazy private var baseScrollContentView = UIView(frame: .zero).then {
+    private lazy var baseScrollContentView = UIView(frame: .zero).then {
         $0.backgroundColor = .white
         $0.frame.size = baseScrollView.frame.size
     }
@@ -83,7 +83,7 @@ class ItemTappedViewController: BaseViewController {
 
 
     // TODO: dynamic size로 변경 필요
-    lazy private var scrollView = UIScrollView(frame: .zero).then {
+    private lazy var scrollView = UIScrollView(frame: .zero).then {
         var scrollContentViewSize = CGSize(width: view.frame.width, height: view.frame.height + 400)
         $0.backgroundColor = .systemBlue
         $0.frame = view.bounds
