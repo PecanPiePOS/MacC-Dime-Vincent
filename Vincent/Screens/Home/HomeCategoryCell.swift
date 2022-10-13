@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-protocol ReusableView: AnyObject {
+protocol TempReusableView: AnyObject {
     static var identifier: String { get }
 }
 
@@ -106,7 +106,7 @@ final class HomeCategoryCell: UICollectionViewCell {
 }
 
 
-extension HomeCategoryCell: ReusableView {
+extension HomeCategoryCell: TempReusableView {
     static var identifier: String {
         return String(describing: self)
     }
