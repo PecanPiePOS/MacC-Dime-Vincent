@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		10DAAE4D28F539B1000CB45C /* ArtItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE4C28F539B1000CB45C /* ArtItemCollectionView.swift */; };
+		10DAAE4F28F539C1000CB45C /* ArtItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE4E28F539C1000CB45C /* ArtItemCollectionViewCell.swift */; };
+		10DAAE5128F539CA000CB45C /* ArtItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE5028F539CA000CB45C /* ArtItem.swift */; };
+		10DAAE5328F5C792000CB45C /* ArtItemCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE5228F5C792000CB45C /* ArtItemCategoryView.swift */; };
+		10DAAE5528F5C7C2000CB45C /* ArtItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE5428F5C7C2000CB45C /* ArtItemViewController.swift */; };
+		10DAAE5728F5D480000CB45C /* ArtItemCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DAAE5628F5D480000CB45C /* ArtItemCategoryViewCell.swift */; };
+
 		58161E9328F43DF0001F8461 /* SellCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58161E9228F43DF0001F8461 /* SellCheckBoxView.swift */; };
 		5826B99828F2A51000F60693 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826B99728F2A51000F60693 /* UIFont+Extension.swift */; };
 		5855709828F2AEDF002FB7C9 /* SellTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855709728F2AEDF002FB7C9 /* SellTextFieldView.swift */; };
 		5855709C28F2FC88002FB7C9 /* SellSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855709B28F2FC88002FB7C9 /* SellSelectView.swift */; };
 		58A30EE228F501140017C625 /* SellPhotoAddedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */; };
 		58A30EE428F5014A0017C625 /* SellPhotoTapAddBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */; };
+
 		A951645828F465D3002CD715 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951645728F465D3002CD715 /* UITextView+Extension.swift */; };
 		7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA02F028F451130006C0B2 /* CategoryViewController.swift */; };
 
@@ -62,12 +71,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		10DAAE4C28F539B1000CB45C /* ArtItemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemCollectionView.swift; sourceTree = "<group>"; };
+		10DAAE4E28F539C1000CB45C /* ArtItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		10DAAE5028F539CA000CB45C /* ArtItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItem.swift; sourceTree = "<group>"; };
+		10DAAE5228F5C792000CB45C /* ArtItemCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemCategoryView.swift; sourceTree = "<group>"; };
+		10DAAE5428F5C7C2000CB45C /* ArtItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemViewController.swift; sourceTree = "<group>"; };
+		10DAAE5628F5D480000CB45C /* ArtItemCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtItemCategoryViewCell.swift; sourceTree = "<group>"; };
+
 		58161E9228F43DF0001F8461 /* SellCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCheckBoxView.swift; sourceTree = "<group>"; };
 		5826B99728F2A51000F60693 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		5855709728F2AEDF002FB7C9 /* SellTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellTextFieldView.swift; sourceTree = "<group>"; };
 		5855709B28F2FC88002FB7C9 /* SellSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellSelectView.swift; sourceTree = "<group>"; };
 		58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellPhotoAddedBox.swift; sourceTree = "<group>"; };
 		58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellPhotoTapAddBox.swift; sourceTree = "<group>"; };
+
 		A951645728F465D3002CD715 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		7BBA02F028F451130006C0B2 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 
@@ -129,6 +147,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		10DAAE4B28F5393C000CB45C /* ArtItem */ = {
+			isa = PBXGroup;
+			children = (
+				10DAAE5428F5C7C2000CB45C /* ArtItemViewController.swift */,
+				10DAAE4C28F539B1000CB45C /* ArtItemCollectionView.swift */,
+				10DAAE4E28F539C1000CB45C /* ArtItemCollectionViewCell.swift */,
+				10DAAE5228F5C792000CB45C /* ArtItemCategoryView.swift */,
+				10DAAE5628F5D480000CB45C /* ArtItemCategoryViewCell.swift */,
+				10DAAE5028F539CA000CB45C /* ArtItem.swift */,
+			);
+			path = ArtItem;
+
 		7BBA02EF28F450F80006C0B2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +246,11 @@
 		CBADEE4128EEBD3A0010B5AA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+
+				10DAAE4B28F5393C000CB45C /* ArtItem */,
+
 				A91C835328F4E234005DF70F /* ProfileTapped */,
+
 				7BBA02EF28F450F80006C0B2 /* Category */,
 				A98D112A28F3D789006122DC /* ItemTapped */,
 				CBADEE4A28EEBED10010B5AA /* Tapbar */,
@@ -463,6 +498,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10DAAE5328F5C792000CB45C /* ArtItemCategoryView.swift in Sources */,
+				10DAAE5528F5C7C2000CB45C /* ArtItemViewController.swift in Sources */,
 				CBADEE5F28EEC2490010B5AA /* UICollectionView+Extension.swift in Sources */,
 				CBCBEF8128F2E3B2009F134F /* ImageMediaItem.swift in Sources */,
 				CBADEE6528EEC28A0010B5AA /* UILabel+Extension.swift in Sources */,
@@ -487,6 +524,9 @@
 				CBCBEF8A28F2E430009F134F /* MessageTableViewCell.swift in Sources */,
 				CBADEE4E28EEBF060010B5AA /* TabbarViewController.swift in Sources */,
 				CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */,
+
+				10DAAE5728F5D480000CB45C /* ArtItemCategoryViewCell.swift in Sources */,
+
 				A9F068C828F52E36009B5CEE /* ProfileEnumeration.swift in Sources */,
 				CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */,
 
@@ -496,15 +536,18 @@
 
 				A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */,
 				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
+				10DAAE5128F539CA000CB45C /* ArtItem.swift in Sources */,
 				CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */,
 				CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */,
 				5855709C28F2FC88002FB7C9 /* SellSelectView.swift in Sources */,
 				CBCBEF7F28F2E3A5009F134F /* Message.swift in Sources */,
 				CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */,
 				CBADEE5928EEC05A0010B5AA /* BackButton.swift in Sources */,
+				10DAAE4F28F539C1000CB45C /* ArtItemCollectionViewCell.swift in Sources */,
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
 				CBCBEF8828F2E40C009F134F /* MessageRoomViewController.swift in Sources */,
 				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
+				10DAAE4D28F539B1000CB45C /* ArtItemCollectionView.swift in Sources */,
 				CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */,
 				A91C835728F4F3FA005DF70F /* ProfileTableViewCell.swift in Sources */,
 				CBADEE3028EEBCE00010B5AA /* SceneDelegate.swift in Sources */,
