@@ -21,6 +21,7 @@ final class ProfileTappedViewController: BaseViewController {
     }
 
     private let profileTableView = UITableView().then {
+        $0.separatorColor = .clear
         $0.backgroundColor = .clear
         $0.isScrollEnabled = false
         $0.rowHeight = 70
