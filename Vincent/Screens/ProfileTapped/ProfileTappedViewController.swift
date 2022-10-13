@@ -9,8 +9,11 @@ import UIKit
 import Then
 
 final class ProfileTappedViewController: BaseViewController {
+
     private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
+
     private let userProfileCell = UIView(frame: .zero)
+
     private let userNickName = UILabel().then {
         $0.text = "다임다임"
     }

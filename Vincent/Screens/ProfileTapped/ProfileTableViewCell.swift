@@ -16,7 +16,7 @@ final class ProfileTableViewCell: UITableViewCell {
 
     private var cellTextLabel = UILabel().then {
         $0.text = ""
-        $0.font = .systemFont(ofSize: 16, weight: .semibold)
+        $0.font = .preferredFont(forTextStyle: .callout, weight: .regular)
         $0.textColor = .white
     }
     //MyProfile
@@ -26,11 +26,11 @@ final class ProfileTableViewCell: UITableViewCell {
     private let userNickName = UILabel().then {
         $0.textColor = .white
         $0.text = "다임다임"
-        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.font = .preferredFont(forTextStyle: .title3, weight: .semibold)
     }
     private let userID = UILabel().then {
         $0.textColor = .white
-        $0.font = .systemFont(ofSize: 14, weight: .light)
+        $0.font = .preferredFont(forTextStyle: .footnote, weight: .light)
         $0.text = "@zdshld2134"
     }
 
