@@ -13,18 +13,17 @@
 		5855709C28F2FC88002FB7C9 /* SellSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855709B28F2FC88002FB7C9 /* SellSelectView.swift */; };
 		58A30EE228F501140017C625 /* SellPhotoAddedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */; };
 		58A30EE428F5014A0017C625 /* SellPhotoTapAddBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */; };
-		A951645828F465D3002CD715 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951645728F465D3002CD715 /* UITextView+Extension.swift */; };
+		7B5CB9D528F7B9C7007DDEA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5CB9D228F7B9C6007DDEA2 /* HomeViewController.swift */; };
+		7B5CB9D628F7B9C7007DDEA2 /* HomeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5CB9D328F7B9C6007DDEA2 /* HomeCategoryCell.swift */; };
+		7B5CB9D728F7B9C7007DDEA2 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5CB9D428F7B9C6007DDEA2 /* HomeCell.swift */; };
 		7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA02F028F451130006C0B2 /* CategoryViewController.swift */; };
-
 		A91C835528F4E248005DF70F /* ProfileTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C835428F4E248005DF70F /* ProfileTappedViewController.swift */; };
 		A91C835728F4F3FA005DF70F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C835628F4F3FA005DF70F /* ProfileTableViewCell.swift */; };
-		A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */; };
-		A9F068C828F52E36009B5CEE /* ProfileEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F068C728F52E36009B5CEE /* ProfileEnumeration.swift */; };
-
+		A951645828F465D3002CD715 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951645728F465D3002CD715 /* UITextView+Extension.swift */; };
 		A9725F4A28F65F5F001D88C0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9725F4928F65F5F001D88C0 /* ReportViewController.swift */; };
 		A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */; };
+		A9F068C828F52E36009B5CEE /* ProfileEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F068C728F52E36009B5CEE /* ProfileEnumeration.swift */; };
 		CB18F2D928F67D5400742C30 /* GoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F2D828F67D5400742C30 /* GoodInfoView.swift */; };
-
 		CB81DA5428F1B108005164FA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CB81DA5328F1B108005164FA /* Lottie */; };
 		CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5628F1B15D005164FA /* MessageViewController.swift */; };
 		CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5928F1B19E005164FA /* SellViewController.swift */; };
@@ -68,18 +67,17 @@
 		5855709B28F2FC88002FB7C9 /* SellSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellSelectView.swift; sourceTree = "<group>"; };
 		58A30EE128F501140017C625 /* SellPhotoAddedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellPhotoAddedBox.swift; sourceTree = "<group>"; };
 		58A30EE328F5014A0017C625 /* SellPhotoTapAddBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellPhotoTapAddBox.swift; sourceTree = "<group>"; };
-		A951645728F465D3002CD715 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		7B5CB9D228F7B9C6007DDEA2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7B5CB9D328F7B9C6007DDEA2 /* HomeCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCategoryCell.swift; sourceTree = "<group>"; };
+		7B5CB9D428F7B9C6007DDEA2 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7BBA02F028F451130006C0B2 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-
 		A91C835428F4E248005DF70F /* ProfileTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTappedViewController.swift; sourceTree = "<group>"; };
 		A91C835628F4F3FA005DF70F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTappedViewController.swift; sourceTree = "<group>"; };
-		A9F068C728F52E36009B5CEE /* ProfileEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEnumeration.swift; sourceTree = "<group>"; };
-
+		A951645728F465D3002CD715 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		A9725F4928F65F5F001D88C0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTappedViewController.swift; sourceTree = "<group>"; };
+		A9F068C728F52E36009B5CEE /* ProfileEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEnumeration.swift; sourceTree = "<group>"; };
 		CB18F2D828F67D5400742C30 /* GoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInfoView.swift; sourceTree = "<group>"; };
-
 		CB81DA5628F1B15D005164FA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		CB81DA5928F1B19E005164FA /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		CBADEE2A28EEBCE00010B5AA /* Vincent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vincent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +127,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B5CB9D128F7B96B007DDEA2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7B5CB9D328F7B9C6007DDEA2 /* HomeCategoryCell.swift */,
+				7B5CB9D428F7B9C6007DDEA2 /* HomeCell.swift */,
+				7B5CB9D228F7B9C6007DDEA2 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		7BBA02EF28F450F80006C0B2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +223,7 @@
 		CBADEE4128EEBD3A0010B5AA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				7B5CB9D128F7B96B007DDEA2 /* Home */,
 				A91C835328F4E234005DF70F /* ProfileTapped */,
 				7BBA02EF28F450F80006C0B2 /* Category */,
 				A98D112A28F3D789006122DC /* ItemTapped */,
@@ -482,22 +491,22 @@
 				7BBA02F128F451130006C0B2 /* CategoryViewController.swift in Sources */,
 				CB18F2D928F67D5400742C30 /* GoodInfoView.swift in Sources */,
 				CBADEE6728EEC2E00010B5AA /* Notification+Extension.swift in Sources */,
+				7B5CB9D528F7B9C7007DDEA2 /* HomeViewController.swift in Sources */,
 				A951645828F465D3002CD715 /* UITextView+Extension.swift in Sources */,
 				CBADEE3228EEBCE00010B5AA /* MainViewController.swift in Sources */,
 				CBCBEF8A28F2E430009F134F /* MessageTableViewCell.swift in Sources */,
 				CBADEE4E28EEBF060010B5AA /* TabbarViewController.swift in Sources */,
+				7B5CB9D628F7B9C7007DDEA2 /* HomeCategoryCell.swift in Sources */,
 				CBADEE6128EEC25F0010B5AA /* NSObject+Extension.swift in Sources */,
 				A9F068C828F52E36009B5CEE /* ProfileEnumeration.swift in Sources */,
 				CBADEE6B28EEC39B0010B5AA /* BaseCollectionViewCell.swift in Sources */,
-
 				A91C835528F4E248005DF70F /* ProfileTappedViewController.swift in Sources */,
-
 				CBCBEF7D28F2E39B009F134F /* Channel.swift in Sources */,
-
 				A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */,
 				CBADEE6328EEC26F0010B5AA /* UIView+Extension.swift in Sources */,
 				CB81DA5A28F1B19E005164FA /* SellViewController.swift in Sources */,
 				CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */,
+				7B5CB9D728F7B9C7007DDEA2 /* HomeCell.swift in Sources */,
 				5855709C28F2FC88002FB7C9 /* SellSelectView.swift in Sources */,
 				CBCBEF7F28F2E3A5009F134F /* Message.swift in Sources */,
 				CBCBEF8328F2E3BE009F134F /* Mocks.swift in Sources */,
