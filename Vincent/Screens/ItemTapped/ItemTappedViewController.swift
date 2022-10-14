@@ -33,6 +33,7 @@ class ItemTappedViewController: BaseViewController {
     private lazy var baseScrollView = UIScrollView(frame: .zero).then {
         $0.backgroundColor = .white
         $0.frame = view.bounds
+        $0.contentSize.width = view.frame.width
     }
 
     private let images: [UIImage?] = [UIImage(named: "i1"), UIImage(named: "i2"), UIImage(named: "i3"), UIImage(named: "i4")]
@@ -91,7 +92,7 @@ class ItemTappedViewController: BaseViewController {
     }
 
     private let descriptionTextView = UITextView().then {
-        let text: String = "여기까지, 기본적으로 NavigationBar를 Custom 할 수 있는 간단한 방법들을 알아봤어요. 더욱 자세한 소스는 Github에 업로드 까 😉"
+        let text: String = "여기있😉키의 물건들 가격 제안 가능!! 10000만원 이키의 물건들 가격 제안 가능!! 10000만원 이키의 물여기있😉키의 물건들 가격 제안 가능!! 10000만원 이키의 물건들 가격 제안 가능!! 10000만원 이키의 물여기들 가격 제안 가능!! 10000만원 이키의 물여기있😉키의 물건들 가격 제안 가능!! 10000만원 이키의 sdasdasdasdasdasdasdasdasdasdasddasdasdasdasdsadsadasdasdasdasdasdasdasdasdasdasd"
         $0.setLineAndLetterSpacing(text)
         $0.font = .preferredFont(forTextStyle: .callout, weight: .regular)
         $0.isScrollEnabled = false
@@ -180,7 +181,7 @@ class ItemTappedViewController: BaseViewController {
 
         firstSeperator.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(dayLabel.snp.bottom).offset(30)
+            $0.top.equalTo(dayLabel.snp.bottom).offset(10)
             $0.width.equalToSuperview().inset(20)
             $0.height.equalTo(1)
         }
@@ -193,7 +194,7 @@ class ItemTappedViewController: BaseViewController {
 
         secondSeperator.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(descriptionTextView.snp.bottom).offset(30)
+            $0.top.equalTo(descriptionTextView.snp.bottom).offset(10)
             $0.width.equalToSuperview().inset(20)
             $0.height.equalTo(1)
         }
@@ -258,8 +259,8 @@ class ItemTappedViewController: BaseViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        baseScrollView.updateContentSize()
+
+        baseScrollView.contentSize.height = imageScrollView.frame.height + titleTextView.frame.height + dayLabel.frame.height + descriptionTextView.frame.height + sellerInformationCell.frame.height + bottomUIView.frame.height * 1.5
     }
 
     private func setFunctionAndDelegate() {
