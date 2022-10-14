@@ -137,6 +137,7 @@ class LogInViewController: BaseViewController {
                 self?.logInErrorLabel.isHidden = false
                 return
             }
+            await FirebaseManager.shared.updateUserToken(uid: userId)
             self?.goHome()
         }
     }

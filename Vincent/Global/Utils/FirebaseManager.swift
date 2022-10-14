@@ -40,7 +40,6 @@ final class FirebaseManager {
     }
     
     func deleteAccount() async {
-        guard let userId = FirebaseManager.auth.currentUser?.uid else { return }
         do {
             try await FirebaseManager.auth.currentUser?.delete()
         } catch {
