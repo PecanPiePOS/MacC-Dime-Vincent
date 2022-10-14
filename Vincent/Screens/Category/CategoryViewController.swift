@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
+    // TODO: 프로퍼티 띄어쓰기 / CollectionView 로 바꾸기
 final class CategoryViewController: BaseViewController {
 
     // MARK: - property
@@ -174,25 +175,25 @@ final class CategoryViewController: BaseViewController {
     }
 }
 
-#if DEBUG
-import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        //empty
-    }
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> some UIViewController {
-        CategoryViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct SnapkitVCRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ViewControllerRepresentable()
-                .previewDisplayName("Preview")
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        }
-    }
-}
-#endif
+//#if DEBUG
+//import SwiftUI
+//struct ViewControllerRepresentable: UIViewControllerRepresentable {
+//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+//        //empty
+//    }
+//    @available(iOS 13.0.0, *)
+//    func makeUIViewController(context: Context) -> some UIViewController {
+//        CategoryViewController()
+//    }
+//}
+//@available(iOS 13.0, *)
+//struct SnapkitVCRepresentable_PreviewProvider: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            ViewControllerRepresentable()
+//                .previewDisplayName("Preview")
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//        }
+//    }
+//}
+//#endif
