@@ -313,7 +313,6 @@ extension ItemTappedViewController {
         print("should navigate to ChatView")
     }
 
-
     @objc func didPressReportButton(_ sender:UIBarButtonItem) {
         let presentedViewController = ReportViewController()
         presentedViewController.modalPresentationStyle = .overFullScreen
