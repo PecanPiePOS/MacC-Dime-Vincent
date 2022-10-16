@@ -8,19 +8,14 @@ import SnapKit
 import UIKit
 import Then
 
-    // TODO: 섹션 별 seperator 없애기
 final class ProfileTappedViewController: BaseViewController {
-    private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
-    private let userProfileCell = UIView(frame: .zero)
-    private let userNickName = UILabel().then {
-        $0.text = "다임다임"
-    }
 
-    private let userID = UILabel().then {
-        $0.text = "@zdshld2134"
-    }
+    private let testHeaderTitle = ["내 프로필", "내 활동", "문의"]
+
+    private let userProfileCell = UIView(frame: .zero)
 
     private let profileTableView = UITableView().then {
+        $0.separatorColor = .clear
         $0.backgroundColor = .clear
         $0.isScrollEnabled = false
         $0.rowHeight = 70
@@ -75,8 +70,6 @@ extension ProfileTappedViewController: UITableViewDataSource {
         case .none:
             print("default")
         }
-
-        cell.selectedBackgroundView = UIView(frame: .zero)
         return cell
     }
 }
