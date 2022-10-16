@@ -48,7 +48,6 @@ final class ProfileTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         render()
-
     }
 
     required init?(coder: NSCoder) {
@@ -83,8 +82,8 @@ final class ProfileTableViewCell: UITableViewCell {
                 $0.leading.equalToSuperview().inset(20)
                 $0.width.height.equalTo(40)
             }
+
             userProfileImage.layer.cornerRadius = 20
-            
 
             userNickName.snp.makeConstraints {
                 $0.top.equalTo(userProfileImage)
