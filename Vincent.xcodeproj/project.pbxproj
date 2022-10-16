@@ -29,7 +29,6 @@
 		A9725F4A28F65F5F001D88C0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9725F4928F65F5F001D88C0 /* ReportViewController.swift */; };
 		A9D7B9DE28F27B4D00ECEF58 /* ItemTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */; };
 		A9F068C828F52E36009B5CEE /* ProfileEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F068C728F52E36009B5CEE /* ProfileEnumeration.swift */; };
-		A9F75B4E28F8D51B00678FCC /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F75B4D28F8D51B00678FCC /* UIScrollView+Extension.swift */; };
 		CB18F2D928F67D5400742C30 /* GoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F2D828F67D5400742C30 /* GoodInfoView.swift */; };
 		CB81DA5428F1B108005164FA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CB81DA5328F1B108005164FA /* Lottie */; };
 		CB81DA5728F1B15D005164FA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81DA5628F1B15D005164FA /* MessageViewController.swift */; };
@@ -90,7 +89,6 @@
 		A9725F4928F65F5F001D88C0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		A9D7B9DD28F27B4D00ECEF58 /* ItemTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTappedViewController.swift; sourceTree = "<group>"; };
 		A9F068C728F52E36009B5CEE /* ProfileEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEnumeration.swift; sourceTree = "<group>"; };
-		A9F75B4D28F8D51B00678FCC /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		CB18F2D828F67D5400742C30 /* GoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInfoView.swift; sourceTree = "<group>"; };
 		CB81DA5628F1B15D005164FA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		CB81DA5928F1B19E005164FA /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
@@ -328,7 +326,6 @@
 				CBADEE6628EEC2E00010B5AA /* Notification+Extension.swift */,
 				5826B99728F2A51000F60693 /* UIFont+Extension.swift */,
 				A951645728F465D3002CD715 /* UITextView+Extension.swift */,
-				A9F75B4D28F8D51B00678FCC /* UIScrollView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,7 +545,6 @@
 				CBADEE2E28EEBCE00010B5AA /* AppDelegate.swift in Sources */,
 				CBCBEF8828F2E40C009F134F /* MessageRoomViewController.swift in Sources */,
 				CBADEE5528EEBFBB0010B5AA /* BaseViewController.swift in Sources */,
-				A9F75B4E28F8D51B00678FCC /* UIScrollView+Extension.swift in Sources */,
 				10DAAE4D28F539B1000CB45C /* ArtItemCollectionView.swift in Sources */,
 				CBADEE5B28EEC1CA0010B5AA /* UIViewController+Extension.swift in Sources */,
 				A91C835728F4F3FA005DF70F /* ProfileTableViewCell.swift in Sources */,
