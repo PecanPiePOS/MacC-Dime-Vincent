@@ -16,26 +16,29 @@ final class ProfileTableViewCell: UITableViewCell {
 
     private var cellTextLabel = UILabel().then {
         $0.text = ""
-        $0.font = .systemFont(ofSize: 16, weight: .semibold)
+        $0.font = .preferredFont(forTextStyle: .callout, weight: .regular)
         $0.textColor = .white
     }
     //MyProfile
     private let userProfileImage = UIImageView().then {
-        $0.image = UIImage(systemName: "drop")
+        $0.image = UIImage(named: "Hardy")
+        $0.layer.cornerRadius = 20
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
     }
     private let userNickName = UILabel().then {
         $0.textColor = .white
         $0.text = "다임다임"
-        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.font = .preferredFont(forTextStyle: .title3, weight: .semibold)
     }
     private let userID = UILabel().then {
         $0.textColor = .white
-        $0.font = .systemFont(ofSize: 14, weight: .light)
+        $0.font = .preferredFont(forTextStyle: .footnote, weight: .light)
         $0.text = "@zdshld2134"
     }
 
-    lazy private var chevronImage = UIImageView().then {
-        $0.image = ImageLiteral.btnFoward
+    private lazy var chevronImage = UIImageView().then {
+        $0.image = ImageLiteral.btnForward
         $0.tintColor = .white
         $0.contentMode = .scaleAspectFit
     }
@@ -45,7 +48,6 @@ final class ProfileTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         render()
-
     }
 
     required init?(coder: NSCoder) {
@@ -80,6 +82,8 @@ final class ProfileTableViewCell: UITableViewCell {
                 $0.leading.equalToSuperview().inset(20)
                 $0.width.height.equalTo(40)
             }
+
+            userProfileImage.layer.cornerRadius = 20
 
             userNickName.snp.makeConstraints {
                 $0.top.equalTo(userProfileImage)

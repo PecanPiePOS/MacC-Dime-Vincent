@@ -16,9 +16,12 @@ enum ImageLiteral {
     static var btnProfile: UIImage { .load(systemName: "person.crop.circle") }
     static var btnBack: UIImage { .load(systemName: "chevron.backward") }
 
-    static var btnFoward: UIImage { .load(systemName: "chevron.forward") }
+    static var btnForward: UIImage { .load(systemName: "chevron.forward") }
     static var btnCamera: UIImage { .load(systemName: "camera") }
     static var btnSend: UIImage { .load(systemName: "paperplane") }
+    static var reportEarImage: UIImage { .load(systemName: "ear.trianglebadge.exclamationmark") }
+    static var shareImage: UIImage { .load(systemName: "square.and.arrow.up")}
+    static var heartImage: UIImage { .load(systemName: "heart")}
 }
 
 extension UIImage {
